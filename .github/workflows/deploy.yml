@@ -74,24 +74,22 @@ jobs:
               name_match = re.search(r"^name\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
               name = name_match.group(1) if name_match else None
                                 
-              # Extract Version or Filename as fallback
-              # ver_match = re.search(r"^\s*version\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
-              ver_match = False
-              if not ver_match:
-                # Fallback to filename inside the [update] block or [download] block if explicit version field is absent
-                ver_match = re.search(r"^\s*filename\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
-                                  
-              version = ver_match.group(1) if ver_match else "N/A"
-                                  
+              # Extract filename from [download] or root
+              file_match = re.search(r"^\s*filename\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
+              filename = file_match.group(1) if file_match else None
+                                                
               if name:
-                mods.append((name, version))
+                if filename:
+                  mods.append(f"{name} ({filename})")
+                else:
+                  mods.append(name)
 
           # Sort alphabetically by mod name
           mods.sort(key=lambda x: x[0].lower())
 
-          for name, version in mods:
-            print(f"{name} ({version})")
-            ' >> "$MODLIST_FILE"
+          for line in mods:
+            print(line)
+          ' >> "$MODLIST_FILE"
           fi
 
           cd ../..

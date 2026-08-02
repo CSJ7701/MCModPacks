@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minecraft Modpack Repository</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Modpack Repository</h1>
+      <p>Select a pack to view options and download build exports.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="loading" class="state-message">Loading modpacks...</div>
+    <div id="error" class="state-message hidden">Failed to load modpacks. Please check console for details.</div>
+    <div id="pack-grid" class="pack-grid"></div>
+  </main>
+
+  <!-- Mod List Viewer Modal -->
+  <div id="modlist-modal" class="modal-backdrop hidden" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 id="modal-title">Mod List</h3>
+        <button class="btn-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <pre id="modal-text">Loading...</pre>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="copyModList()">Copy to Clipboard</button>
+        <button class="btn btn-primary" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

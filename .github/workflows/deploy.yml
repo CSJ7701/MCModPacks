@@ -75,7 +75,8 @@ jobs:
               name = name_match.group(1) if name_match else None
                                 
               # Extract Version or Filename as fallback
-              ver_match = re.search(r"^\s*version\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
+              # ver_match = re.search(r"^\s*version\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
+              ver_match = False
               if not ver_match:
                 # Fallback to filename inside the [update] block or [download] block if explicit version field is absent
                 ver_match = re.search(r"^\s*filename\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)

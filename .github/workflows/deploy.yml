@@ -4,117 +4,117 @@ on:
   push:
     branches: ["main"]
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+      concurrency:
+        group: "pages"
+        cancel-in-progress: true
 
-jobs:
-  build-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+        jobs:
+          build-and-deploy:
+            environment:
+              name: github-pages
+              url: ${{ steps.deployment.outputs.page_url }}
+              runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+              steps:
+                - name: Checkout Repository
+                  uses: actions/checkout@v4
 
-      - name: Setup Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: '>=1.21'
+                - name: Setup Go
+                  uses: actions/setup-go@v5
+                  with:
+                    go-version: '>=1.21'
 
-      - name: Install packwiz
-        run: go install github.com/packwiz/packwiz@latest
+                - name: Install packwiz
+                  run: go install github.com/packwiz/packwiz@latest
 
-      - name: Build Packs & Generate Site Data
-        run: |
-          mkdir -p dist/packs
-          
-          if [ -d "site" ]; then
-            cp -r site/* dist/
-          fi
+                - name: Build Packs & Generate Site Data
+                  run: |
+                    mkdir -p dist/packs
+                            
+                    if [ -d "site" ]; then
+                    cp -r site/* dist/
+                    fi
 
-          MANIFEST="["
+                    MANIFEST="["
 
-          for pack_dir in packs/*; do
-            if [ -d "$pack_dir" ]; then
-              PACK_ID=$(basename "$pack_dir")
-              echo "Building pack: $PACK_ID"
-              
-              mkdir -p "dist/packs/$PACK_ID"
-              cd "$pack_dir"
+                    for pack_dir in packs/*; do
+                    if [ -d "$pack_dir" ]; then
+                    PACK_ID=$(basename "$pack_dir")
+                    echo "Building pack: $PACK_ID"
+                            
+                    mkdir -p "dist/packs/$PACK_ID"
+                    cd "$pack_dir"
 
-              # 1. Export Modrinth pack
-              packwiz modrinth export -o "../../dist/packs/$PACK_ID/$PACK_ID-modrinth.mrpack"
+                    # 1. Export Modrinth pack
+                    packwiz modrinth export -o "../../dist/packs/$PACK_ID/$PACK_ID-modrinth.mrpack"
 
-              # 2. Export CurseForge pack
-              packwiz curseforge export -o "../../dist/packs/$PACK_ID/$PACK_ID-curseforge.zip"
+                    # 2. Export CurseForge pack
+                    packwiz curseforge export -o "../../dist/packs/$PACK_ID/$PACK_ID-curseforge.zip"
 
-              # 3. Clean Mod List generation with Mod Name & Version
-              MODLIST_FILE="../../dist/packs/$PACK_ID/modlist.txt"
-              echo "# Mod List for $PACK_ID" > "$MODLIST_FILE"
-              echo "" >> "$MODLIST_FILE"
+                    # 3. Clean Mod List generation with Mod Name & Version
+                    MODLIST_FILE="../../dist/packs/$PACK_ID/modlist.txt"
+                    echo "# Mod List for $PACK_ID" > "$MODLIST_FILE"
+                    echo "" >> "$MODLIST_FILE"
 
-              if [ -d "mods" ]; then
-                python3 -c '
-import os, glob, re
+                    if [ -d "mods" ]; then
+                    python3 -c '
+                    import os, glob, re
 
-mods = []
-for file in glob.glob("mods/*.toml"):
-    with open(file, "r", encoding="utf-8") as f:
-        content = f.read()
-        
-        # Extract Name
-        name_match = re.search(r"^name\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
-        name = name_match.group(1) if name_match else None
-        
-        # Extract Version or Filename as fallback
-        ver_match = re.search(r"^\s*version\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
-        if not ver_match:
-            # Fallback to filename inside the [update] block or [download] block if explicit version field is absent
-            ver_match = re.search(r"^\s*filename\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
-            
-        version = ver_match.group(1) if ver_match else "N/A"
-        
-        if name:
-            mods.append((name, version))
+                    mods = []
+                    for file in glob.glob("mods/*.toml"):
+                      with open(file, "r", encoding="utf-8") as f:
+                        content = f.read()
+                                
+                        # Extract Name
+                        name_match = re.search(r"^name\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
+                        name = name_match.group(1) if name_match else None
+                                
+                        # Extract Version or Filename as fallback
+                        ver_match = re.search(r"^\s*version\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
+                        if not ver_match:
+                          # Fallback to filename inside the [update] block or [download] block if explicit version field is absent
+                          ver_match = re.search(r"^\s*filename\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
+                                  
+                        version = ver_match.group(1) if ver_match else "N/A"
+                                  
+                        if name:
+                          mods.append((name, version))
 
-# Sort alphabetically by mod name
-mods.sort(key=lambda x: x[0].lower())
+                    # Sort alphabetically by mod name
+                    mods.sort(key=lambda x: x[0].lower())
 
-for name, version in mods:
-    print(f"{name} ({version})")
-' >> "$MODLIST_FILE"
-              fi
+                    for name, version in mods:
+                      print(f"{name} ({version})")
+                      ' >> "$MODLIST_FILE"
+                    fi
 
-              cd ../..
+                    cd ../..
 
-              # Copy metadata.json if it exists
-              if [ -f "$pack_dir/metadata.json" ]; then
-                cp "$pack_dir/metadata.json" "dist/packs/$PACK_ID/metadata.json"
-              fi
+                    # Copy metadata.json if it exists
+                    if [ -f "$pack_dir/metadata.json" ]; then
+                    cp "$pack_dir/metadata.json" "dist/packs/$PACK_ID/metadata.json"
+                    fi
 
-              MANIFEST="${MANIFEST}{\"id\":\"${PACK_ID}\",\"mrpack\":\"packs/${PACK_ID}/${PACK_ID}-modrinth.mrpack\",\"curseforge\":\"packs/${PACK_ID}/${PACK_ID}-curseforge.zip\",\"modlist\":\"packs/${PACK_ID}/modlist.txt\"},"
-            fi
-          done
+                    MANIFEST="${MANIFEST}{\"id\":\"${PACK_ID}\",\"mrpack\":\"packs/${PACK_ID}/${PACK_ID}-modrinth.mrpack\",\"curseforge\":\"packs/${PACK_ID}/${PACK_ID}-curseforge.zip\",\"modlist\":\"packs/${PACK_ID}/modlist.txt\"},"
+                    fi
+                    done
 
-          MANIFEST="${MANIFEST%,}]"
-          echo "$MANIFEST" > dist/manifest.json
+                    MANIFEST="${MANIFEST%,}]"
+                    echo "$MANIFEST" > dist/manifest.json
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+                  - name: Setup Pages
+                    uses: actions/configure-pages@v5
 
-      - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'dist'
+                  - name: Upload Pages Artifact
+                    uses: actions/upload-pages-artifact@v3
+                    with:
+                      path: 'dist'
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+                  - name: Deploy to GitHub Pages
+                    id: deployment
+                    uses: actions/deploy-pages@v4

@@ -1,0 +1,89 @@
+name: Deploy Modpack Downloads & Pages
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '>=1.21'
+
+      - name: Install packwiz
+        run: go install github.com/packwiz/packwiz@latest
+
+      - name: Build Packs & Generate Site Data
+        run: |
+          mkdir -p dist/packs
+          
+          # Copy site template assets
+          if [ -d "site" ]; then
+            cp -r site/* dist/
+          fi
+
+          MANIFEST="["
+
+          for pack_dir in packs/*; do
+            if [ -d "$pack_dir" ]; then
+              PACK_ID=$(basename "$pack_dir")
+              echo "Building pack: $PACK_ID"
+              
+              mkdir -p "dist/packs/$PACK_ID"
+              cd "$pack_dir"
+
+              # 1. Export Modrinth pack
+              packwiz modrinth export -o "../../dist/packs/$PACK_ID/$PACK_ID-modrinth.mrpack"
+
+              # 2. Export CurseForge pack
+              packwiz curseforge export -o "../../dist/packs/$PACK_ID/$PACK_ID-curseforge.zip"
+
+              # 3. Generate human-readable Mod List text file
+              echo "# Mod List for $PACK_ID" > "../../dist/packs/$PACK_ID/modlist.txt"
+              grep -h "name = " mods/*.toml | cut -d '"' -f 2 | sort >> "../../dist/packs/$PACK_ID/modlist.txt"
+
+              cd ../..
+
+              # Copy metadata.json if it exists
+              if [ -f "$pack_dir/metadata.json" ]; then
+                cp "$pack_dir/metadata.json" "dist/packs/$PACK_ID/metadata.json"
+              fi
+
+              MANIFEST="${MANIFEST}{\"id\":\"${PACK_ID}\",\"mrpack\":\"packs/${PACK_ID}/${PACK_ID}-modrinth.mrpack\",\"curseforge\":\"packs/${PACK_ID}/${PACK_ID}-curseforge.zip\",\"modlist\":\"packs/${PACK_ID}/modlist.txt\"},"
+            fi
+          done
+
+          # Close JSON array (remove trailing comma if present)
+          MANIFEST="${MANIFEST%,}]"
+          echo "$MANIFEST" > dist/manifest.json
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

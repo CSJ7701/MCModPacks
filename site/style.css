@@ -254,7 +254,7 @@ header p {
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
   width: 100%;
-  max-width: 600px;
+  max-width: 80vw;
   max-height: 80vh;
   display: flex;
   flex-direction: column;

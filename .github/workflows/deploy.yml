@@ -36,7 +36,6 @@ jobs:
         run: |
           mkdir -p dist/packs
           
-          # Copy site template assets
           if [ -d "site" ]; then
             cp -r site/* dist/
           fi
@@ -57,9 +56,14 @@ jobs:
               # 2. Export CurseForge pack
               packwiz curseforge export -o "../../dist/packs/$PACK_ID/$PACK_ID-curseforge.zip"
 
-              # 3. Generate human-readable Mod List text file
-              echo "# Mod List for $PACK_ID" > "../../dist/packs/$PACK_ID/modlist.txt"
-              grep -h "name = " mods/*.toml | cut -d '"' -f 2 | sort >> "../../dist/packs/$PACK_ID/modlist.txt"
+              # 3. Clean Mod List generation (extracts only the "name" property from mods/*.toml)
+              MODLIST_FILE="../../dist/packs/$PACK_ID/modlist.txt"
+              echo "# Mod List for $PACK_ID" > "$MODLIST_FILE"
+              echo "" >> "$MODLIST_FILE"
+
+              if [ -d "mods" ]; then
+                grep -h '^name\s*=\s*' mods/*.toml 2>/dev/null | sed -E 's/^name\s*=\s*"([^"]+)".*/\1/' | sort -f >> "$MODLIST_FILE"
+              fi
 
               cd ../..
 
@@ -72,7 +76,6 @@ jobs:
             fi
           done
 
-          # Close JSON array (remove trailing comma if present)
           MANIFEST="${MANIFEST%,}]"
           echo "$MANIFEST" > dist/manifest.json
 

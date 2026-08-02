@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", initApp);
 
+const FALLBACK_ICON = "flaticon-minecraft.png";
+
 async function initApp() {
   const loadingEl = document.getElementById("loading");
   const errorEl = document.getElementById("error");
@@ -30,7 +32,6 @@ async function initApp() {
 }
 
 async function createPackCard(pack) {
-  // Fetch metadata if it exists, otherwise build fallback data
   let meta = {
     name: pack.id.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase()),
     version: "1.0.0",
@@ -45,18 +46,18 @@ async function createPackCard(pack) {
       meta = { ...meta, ...fetchedMeta };
     }
   } catch (e) {
-    // Graceful fallback if metadata.json is missing or invalid
+    // Graceful fallback if metadata.json fails
   }
+
+  const iconSrc = meta.icon ? meta.icon : FALLBACK_ICON;
 
   const card = document.createElement("div");
   card.className = "pack-card";
 
-  const defaultIconSvg = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="%2394a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>`;
-
   card.innerHTML = `
     <div>
       <div class="pack-header">
-        <img class="pack-icon" src="${meta.icon || defaultIconSvg}" alt="${meta.name} Icon" onerror="this.src='${defaultIconSvg}'" />
+        <img class="pack-icon" src="${iconSrc}" alt="${meta.name} Icon" onerror="this.src='${FALLBACK_ICON}'" />
         <div class="pack-title">
           <h2>${escapeHtml(meta.name)}</h2>
           <span class="pack-version">v${escapeHtml(meta.version)}</span>
@@ -65,8 +66,8 @@ async function createPackCard(pack) {
       <p class="pack-desc">${escapeHtml(meta.description)}</p>
     </div>
     <div class="actions">
-      <a class="btn btn-mr" href="${pack.mrpack}" download>Download Modrinth Pack (.mrpack)</a>
-      <a class="btn btn-cf" href="${pack.curseforge}" download>Download CurseForge Pack (.zip)</a>
+      <a class="btn btn-sage" href="${pack.mrpack}" download>Modrinth Pack (.mrpack)</a>
+      <a class="btn btn-green" href="${pack.curseforge}" download>CurseForge Pack (.zip)</a>
       <button class="btn btn-neutral" onclick="viewModList('${pack.modlist}', '${escapeHtml(meta.name)}')">View Mod List</button>
     </div>
   `;
@@ -74,7 +75,7 @@ async function createPackCard(pack) {
   return card;
 }
 
-// Mod List Modal Handling
+// Modal handling
 async function viewModList(modlistUrl, packName) {
   const modal = document.getElementById("modlist-modal");
   const modalTitle = document.getElementById("modal-title");
@@ -94,9 +95,8 @@ async function viewModList(modlistUrl, packName) {
   }
 }
 
-function closeModal(event) {
-  const modal = document.getElementById("modlist-modal");
-  modal.classList.add("hidden");
+function closeModal() {
+  document.getElementById("modlist-modal").classList.add("hidden");
 }
 
 function copyModList() {
@@ -104,6 +104,21 @@ function copyModList() {
   navigator.clipboard.writeText(text).then(() => {
     alert("Mod list copied to clipboard!");
   });
+}
+
+// Manual Light/Dark Theme Switcher
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  
+  let newTheme;
+  if (currentTheme) {
+    newTheme = currentTheme === "dark" ? "light" : "dark";
+  } else {
+    newTheme = prefersDark ? "light" : "dark";
+  }
+
+  document.documentElement.setAttribute("data-theme", newTheme);
 }
 
 function escapeHtml(str) {

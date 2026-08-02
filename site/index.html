@@ -8,9 +8,12 @@
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>Modpack Repository</h1>
-      <p>Select a pack to view options and download build exports.</p>
+    <div class="container header-content">
+      <div>
+        <h1>Modpack Repository</h1>
+        <p>Select a pack to view options and download build exports.</p>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">Theme</button>
     </div>
   </header>
 
@@ -31,8 +34,8 @@
         <pre id="modal-text">Loading...</pre>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" onclick="copyModList()">Copy to Clipboard</button>
-        <button class="btn btn-primary" onclick="closeModal()">Close</button>
+        <button class="btn btn-neutral" onclick="copyModList()">Copy to Clipboard</button>
+        <button class="btn btn-sage" onclick="closeModal()">Close</button>
       </div>
     </div>
   </div>

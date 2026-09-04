@@ -77,12 +77,15 @@ jobs:
               # Extract filename from [download] or root
               file_match = re.search(r"^\s*filename\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
               filename = file_match.group(1) if file_match else None
-                                                
+
+              side_match = re.search(r"^\s*side\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
+              side = side_match.group(1) if side_match else "both"
+
               if name:
-                if filename:
-                  mods.append(f"{name} ({filename})")
-                else:
-                  mods.append(name)
+                label = f"{name} ({filename})" if filename else name
+                if side != "both":
+                  label += f" [{side}]"
+                mods.append(label)
 
           # Sort alphabetically by mod name
           mods.sort(key=lambda x: x[0].lower())

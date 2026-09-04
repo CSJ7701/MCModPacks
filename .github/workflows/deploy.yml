@@ -30,7 +30,7 @@ jobs:
           go-version: '>=1.21'
 
       - name: Install packwiz
-        run: go install github.com/packwiz/packwiz@latest
+        run: go install github.com/packwiz/packwiz@dfd8b68a4796c763e25bad50265ea1f1233e24f1
 
       - name: Build Packs & Generate Site Data
         run: |

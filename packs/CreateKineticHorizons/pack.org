@@ -27,7 +27,10 @@
 :Source:   modrinth
 :END:
 
-*** ACTIVE Middgard
+*** DISABLED Middgard
+Disabled in favor of the actual mod file in the mods dir.
+Have to use file, because sbeev isn't allowing 3rd party downloads.
+CLOSED: [2026-09-04 Fri 19:54]
 :PROPERTIES:
 :Source:   curseforge
 :END:

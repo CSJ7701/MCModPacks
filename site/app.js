@@ -115,8 +115,7 @@ async function createPackCard(pack) {
           Download Modpack <span class="caret">▾</span>
         </button>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="${pack.client_mrpack}" download>Client — Modrinth (.mrpack)</a>
-          <a class="dropdown-item" href="${pack.server_mrpack}" download>Server — Modrinth (.mrpack)</a>
+          <a class="dropdown-item" href="${pack.mrpack}" download>Modrinth (.mrpack)</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="${pack.client_curseforge}" download>Client — CurseForge (.zip)</a>
           <a class="dropdown-item" href="${pack.server_curseforge}" download>Server — CurseForge (.zip)</a>

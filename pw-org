@@ -1,0 +1,395 @@
+#!/usr/bin/env python3
+import argparse
+import os
+import re
+import time
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+import orgparse
+from rich.console import Console
+from rich.panel import Panel
+from rich.progress import (
+    BarColumn,
+    MofNCompleteColumn,
+    Progress,
+    SpinnerColumn,
+    TextColumn,
+    TimeRemainingColumn,
+)
+from rich.table import Table
+
+console = Console()
+
+
+def check_packwiz_installed():
+    if shutil.which("packwiz") is None:
+        console.print("[bold red]Error:[/] 'packwiz' executable not found in PATH.", style="red")
+        sys.exit(1)
+
+
+def validate_packwiz_dir(pack_dir: Path):
+    if not (pack_dir / "pack.toml").is_file():
+        console.print(
+            f"[bold red]Error:[/] '{pack_dir}' does not appear to be a valid packwiz pack (missing pack.toml).",
+            style="red",
+        )
+        sys.exit(1)
+
+
+def parse_org_mods(org_path: Path):
+    """Parses the org file and returns a list of active mod dictionaries."""
+    if not org_path.is_file():
+        console.print(f"[bold red]Error:[/] Org file '{org_path}' not found.", style="red")
+        sys.exit(1)
+
+    root = orgparse.load(org_path)
+    active_mods = []
+
+    for node in root[1:]:
+        if node.todo == "ACTIVE":
+            mod_title = node.heading.strip()
+            side = node.properties.get("Side", "both").lower().strip()
+            source = node.properties.get("Source", None)
+            source_url = node.properties.get("Source_URL", None)
+            version_url = node.properties.get("Version_URL", None)
+
+            if source:
+                source = source.lower().strip()
+
+            active_mods.append(
+                {
+                    "name": mod_title,
+                    "side": side,
+                    "source": source,
+                    "source_url": source_url.strip() if source_url else None,
+                    "version_url": version_url.strip() if version_url else None,
+                }
+            )
+
+    return active_mods
+
+
+def get_mod_issues(mods: list[dict]) -> list[str]:
+    """Evaluates mods for missing or invalid source configurations."""
+    issues = []
+    for mod in mods:
+        name = mod["name"]
+        source = mod["source"]
+        url = mod["source_url"]
+
+        if not source:
+            issues.append(f"Mod '[cyan]{name}[/]' is missing an explicit :Source: property.")
+        elif source == "url" and not url:
+            issues.append(f"Mod '[cyan]{name}[/]' has Source 'url' but is missing :Source_URL:.")
+        elif source not in ["modrinth", "curseforge", "url"]:
+            issues.append(f"Mod '[cyan]{name}[/]' has invalid Source '[bold red]{source}[/]'.")
+    return issues
+
+
+def sync_extra_files(extra_dir: Path, pack_dir: Path):
+    if not extra_dir.exists() or not extra_dir.is_dir():
+        console.print(f"[yellow]Extra dir '{extra_dir}' does not exist. Skipping extra file sync.[/]")
+        return
+
+    console.print(f"\n[bold blue]--- Syncing extra files from '{extra_dir}' ---[/]")
+    for root, _, files in os.walk(extra_dir):
+        rel_path = Path(root).relative_to(extra_dir)
+        target_dir = pack_dir / rel_path
+        target_dir.mkdir(parents=True, exist_ok=True)
+
+        for file in files:
+            src_file = Path(root) / file
+            dst_file = target_dir / file
+            shutil.copy2(src_file, dst_file)
+            console.print(f" [dim]Copied extra file ->[/] {rel_path / file}")
+
+
+def clean_existing_mods(pack_dir: Path, active_mod_names: set):
+    mods_dir = pack_dir / "mods"
+    if not mods_dir.exists():
+        return
+
+    for mod_file in mods_dir.glob("*.toml"):
+        slug_name = mod_file.stem.lower()
+
+        is_active = any(
+            re.sub(r"[^a-zA-Z0-9]", "", active_name.lower()) in re.sub(r"[^a-zA-Z0-9]", "", slug_name)
+            or re.sub(r"[^a-zA-Z0-9]", "", slug_name) in re.sub(r"[^a-zA-Z0-9]", "", active_name.lower())
+            for active_name in active_mod_names
+        )
+
+        if not is_active:
+            console.print(f"[yellow]Removing unlisted/disabled mod file:[/] {mod_file.name}")
+            mod_file.unlink()
+
+
+def install_or_update_mod(mod: dict, pack_dir: Path, retries: int = 3) -> tuple[bool, str]:
+    mod_name = mod["name"]
+    source = mod["source"]
+    source_url = mod["source_url"]
+    version_url = mod["version_url"]
+
+    if not source:
+        return False, "No source configured"
+
+    if source == "url":
+        if not source_url:
+            return False, "Specifies 'url' source but missing :Source_URL:"
+        cmd = ["packwiz", "url", "add", mod_name, source_url, "-y"]
+
+    elif source in ["modrinth", "curseforge"]:
+        target = version_url if version_url else mod_name
+        cmd = ["packwiz", source, "add", target, "-y"]
+
+    else:
+        return False, f"Unknown source '{source}'"
+
+    for attempt in range(retries):
+        res = subprocess.run(cmd, cwd=pack_dir, capture_output=True, text=True)
+
+        if res.returncode == 0:
+            break
+
+        if res.stderr:
+            err = res.stderr
+        else:
+            err = ""
+        raw_output = (err + "\n" + res.stdout).strip()
+        if "invalid character '<'" in raw_output and attempt < retries -1:
+            # Exponential backoff delay (1s, 2s, 4s...)
+            time.sleep(2 ** attempt)
+            continue
+
+        # If failed for other reason, or ran out of retries
+        clean_lines = [
+            line for line in raw_output.splitlines()
+            if line.strip() and not line.strip().startswith("Searching ")
+        ]
+        err_msg = clean_lines[-1] if clean_lines else "Unknown packwiz error"
+        return False, err_msg
+
+    # Prevent rate-limiting
+    time.sleep(0.25)
+
+    slug = re.sub(r"[^a-z0-9]+", "-", mod_name.lower()).strip("-")
+    toml_path = pack_dir / "mods" / f"{slug}.pw.toml"
+
+    if toml_path.exists() and mod["side"] in ["client", "server", "both"]:
+        content = toml_path.read_text()
+        if "side =" in content:
+            content = re.sub(r'side\s*=\s*"[^"]+"', f'side = "{mod["side"]}"', content)
+        else:
+            content += f'\nside = "{mod["side"]}"\n'
+        toml_path.write_text(content)
+
+    return True, ""
+
+
+# Command implementations
+
+
+def cmd_sync(args):
+    check_packwiz_installed()
+    validate_packwiz_dir(args.pack_dir)
+
+    active_mods = parse_org_mods(args.org_file)
+    valid_mods = [m for m in active_mods if m["source"]]
+    missing_source_count = len(active_mods) - len(valid_mods)
+    active_names = {m["name"] for m in valid_mods}
+
+    console.print(
+        f"[bold green]Parsed '{args.org_file.name}':[/] Found [cyan]{len(active_mods)}[/] ACTIVE mods."
+    )
+
+    clean_existing_mods(args.pack_dir, active_names)
+
+    succeeded = []
+    failed = []
+
+    console.print("\n[bold]Starting mod installation/sync...[/]\n")
+
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        BarColumn(bar_width=40),
+        MofNCompleteColumn(),
+        TimeRemainingColumn(),
+        console=console,
+        transient=False,
+    ) as progress:
+        task = progress.add_task("[cyan]Syncing mods...", total=len(valid_mods))
+
+        for mod in valid_mods:
+            progress.update(task, description=f"[cyan]Processing:[/] {mod['name']}")
+            success, error_reason = install_or_update_mod(mod, args.pack_dir)
+
+            if success:
+                succeeded.append(mod["name"])
+            else:
+                failed.append((mod["name"], error_reason))
+                # Print errors above the progress bar dynamically
+                first_line = error_reason.splitlines()[0] if error_reason else "No error output"
+                progress.console.print(
+                    f"  [bold red]✘ Failed:[/] [cyan]{mod['name']}[/] [dim]({first_line})[/]"
+                )
+
+            progress.advance(task)
+
+    if args.extra_dir:
+        sync_extra_files(args.extra_dir, args.pack_dir)
+
+    console.print("\n[bold dim]Refreshing packwiz index...[/]")
+    subprocess.run(["packwiz", "refresh"], cwd=args.pack_dir)
+
+    # Render Final Summary Table
+    summary_table = Table(title="Sync Summary Results", show_header=True, header_style="bold magenta")
+    summary_table.add_column("Status", style="bold", width=15)
+    summary_table.add_column("Count", justify="right", width=10)
+    summary_table.add_column("Details")
+
+    summary_table.add_row(
+        "[green]Succeeded[/]", str(len(succeeded)), f"Updated in {args.pack_dir.name}"
+    )
+    summary_table.add_row(
+        "[red]Failed[/]",
+        str(len(failed)),
+        ", ".join([f"[cyan]{m[0]}[/]" for m in failed]) if failed else "[dim]None[/]",
+    )
+    if missing_source_count > 0:
+        summary_table.add_row(
+            "[yellow]Skipped[/]",
+            str(missing_source_count),
+            "Missing :Source: property (run 'pw-org errors')",
+        )
+
+    console.print()
+    console.print(summary_table)
+
+
+def cmd_stats(args):
+    mods = parse_org_mods(args.org_file)
+
+    total = len(mods)
+    client_only = sum(1 for m in mods if m["side"] == "client")
+    server_only = sum(1 for m in mods if m["side"] == "server")
+    both_side = sum(1 for m in mods if m["side"] == "both")
+
+    modrinth_cnt = sum(1 for m in mods if m["source"] == "modrinth")
+    curseforge_cnt = sum(1 for m in mods if m["source"] == "curseforge")
+    url_cnt = sum(1 for m in mods if m["source"] == "url")
+    missing_src_cnt = sum(1 for m in mods if not m["source"])
+    pinned_cnt = sum(1 for m in mods if m["version_url"])
+
+    table = Table(show_header=True, header_style="bold blue", title=f"Modpack Stats: {args.org_file.name}")
+    table.add_column("Category", style="bold")
+    table.add_column("Metric")
+    table.add_column("Count", justify="right", style="cyan")
+
+    table.add_row("Overview", "Total Active Mods", str(total))
+    table.add_row("Overview", "Pinned Versions", str(pinned_cnt))
+    table.add_section()
+    table.add_row("Side Distribution", "Both", str(both_side))
+    table.add_row("Side Distribution", "Client Only", str(client_only))
+    table.add_row("Side Distribution", "Server Only", str(server_only))
+    table.add_section()
+    table.add_row("Sources", "Modrinth", str(modrinth_cnt))
+    table.add_row("Sources", "CurseForge", str(curseforge_cnt))
+    table.add_row("Sources", "Direct URL", str(url_cnt))
+    table.add_row("Sources", "Missing Source", f"[red]{missing_src_cnt}[/]" if missing_src_cnt else "0")
+
+    console.print(table)
+
+
+def cmd_list(args):
+    mods = parse_org_mods(args.org_file)
+
+    table = Table(title=f"Active Mods ({len(mods)})", show_header=True, header_style="bold green")
+    table.add_column("Mod Name", style="cyan", no_wrap=True)
+    table.add_column("Source", style="magenta")
+    table.add_column("Side", style="yellow")
+
+    for mod in mods:
+        src = mod["source"] or "[red]NO_SOURCE[/]"
+        if src == "url" and mod["source_url"]:
+            src = f"url ([dim]{mod['source_url']}[/])"
+        elif mod["version_url"]:
+            src = f"{src} ([dim]pinned[/])"
+
+        table.add_row(mod["name"], src, mod["side"])
+
+    console.print(table)
+
+
+def cmd_errors(args):
+    mods = parse_org_mods(args.org_file)
+    issues = get_mod_issues(mods)
+
+    if not issues:
+        console.print(
+            Panel(
+                "[bold green]No errors or missing source properties detected![/]",
+                border_style="green",
+            )
+        )
+        return
+
+    console.print(f"\n[bold red]Found {len(issues)} issue(s) in '{args.org_file.name}':[/]\n")
+    for issue in issues:
+        console.print(f" [bold red]![/] {issue}")
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Manage packwiz modpacks via Org-mode declarations."
+    )
+    subparsers = parser.add_subparsers(dest="command", required=True)
+
+    # pw-org sync
+    parser_sync = subparsers.add_parser("sync", help="Sync active mods from org file to packwiz directory.")
+    parser_sync.add_argument("org_file", type=Path, help="Path to .org modpack file")
+    parser_sync.add_argument(
+        "pack_dir",
+        type=Path,
+        nargs="?",
+        default=Path.cwd(),
+        help="Packwiz pack directory (defaults to current directory)",
+    )
+    parser_sync.add_argument(
+        "-e",
+        "--extra-dir",
+        type=Path,
+        default=None,
+        help="Directory containing configs/kubejs/overrides to sync into pack",
+    )
+    parser_sync.set_defaults(func=cmd_sync)
+
+    # pw-org stats
+    parser_stats = subparsers.add_parser(
+        "stats", help="Display overview statistics for declared mods."
+    )
+    parser_stats.add_argument("org_file", type=Path, help="Path to .org modpack file")
+    parser_stats.set_defaults(func=cmd_stats)
+
+    # pw-org list
+    parser_list = subparsers.add_parser(
+        "list", help="Print shareable pipe-delimited list of active mods."
+    )
+    parser_list.add_argument("org_file", type=Path, help="Path to .org modpack file")
+    parser_list.set_defaults(func=cmd_list)
+
+    # pw-org errors
+    parser_errors = subparsers.add_parser(
+        "errors", help="Check org file for missing sources or property errors."
+    )
+    parser_errors.add_argument("org_file", type=Path, help="Path to .org modpack file")
+    parser_errors.set_defaults(func=cmd_errors)
+
+    args = parser.parse_args()
+    args.func(args)
+
+
+if __name__ == "__main__":
+    main()

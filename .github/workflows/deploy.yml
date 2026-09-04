@@ -51,10 +51,12 @@ jobs:
           cd "$pack_dir"
           
           # 1. Export Modrinth pack
-          packwiz modrinth export -o "../../dist/packs/$PACK_ID/$PACK_ID-modrinth.mrpack"
+          packwiz modrinth export --side client -o "../../dist/packs/$PACK_ID/$PACK_ID-client-modrinth.mrpack"
+          packwiz modrinth export --side server -0 "../../dist/packs/$PACK_ID/$PACK_ID-server-modrinth.mrpack"
 
           # 2. Export CurseForge pack
-          packwiz curseforge export -o "../../dist/packs/$PACK_ID/$PACK_ID-curseforge.zip"
+          packwiz curseforge export --side client -o "../../dist/packs/$PACK_ID/$PACK_ID-client-curseforge.zip"
+          packwiz curseforge export --side server -o "../../dist/packs/$PACK_ID/$PACK_ID-server-curseforge.zip"
 
           # 3. Clean Mod List generation with Mod Name & Version
           MODLIST_FILE="../../dist/packs/$PACK_ID/modlist.txt"
@@ -102,7 +104,7 @@ jobs:
           cp "$pack_dir/metadata.json" "dist/packs/$PACK_ID/metadata.json"
           fi
 
-          MANIFEST="${MANIFEST}{\"id\":\"${PACK_ID}\",\"mrpack\":\"packs/${PACK_ID}/${PACK_ID}-modrinth.mrpack\",\"curseforge\":\"packs/${PACK_ID}/${PACK_ID}-curseforge.zip\",\"modlist\":\"packs/${PACK_ID}/modlist.txt\"},"
+          MANIFEST="${MANIFEST}{\"id\":\"${PACK_ID}\",\"client_mrpack\":\"packs/${PACK_ID}/${PACK_ID}-client-modrinth.mrpack\",\"server_mrpack\":\"packs/${PACK_ID}/${PACK_ID}-server-modrinth.mrpack\",\"client_curseforge\":\"packs/${PACK_ID}/${PACK_ID}-client-curseforge.zip\",\"server_curseforge\":\"packs/${PACK_ID}/${PACK_ID}-server-curseforge.zip\",\"modlist\":\"packs/${PACK_ID}/modlist.txt\"},"
           fi
           done
 

@@ -194,12 +194,12 @@
 
 *** ACTIVE Coasters: Engineered
 :PROPERTIES:
-:Source:   curseforge
+:Source:   modrinth
 :END:
 
 *** ACTIVE Coasters Simulated: Track Styles
 :PROPERTIES:
-:Source:   curseforge
+:Source:   modrinth
 :END:
 
 *** ACTIVE Create Coasters Extras

@@ -1,6 +1,46 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/quark-common.toml"
+hash = "3f4e2b602142cda19da011eefba896ceef6b112085abff1a5c543751c3e42202"
+
+[[files]]
+file = "kubejs/server_scripts/downed/00_recipes.js"
+hash = "cf053818ec5b8d6e294ed5ad66cd36d75bb4f2115948b207ccd123e721fc07c5"
+
+[[files]]
+file = "kubejs/server_scripts/downed/01_core.js"
+hash = "2afd1ae1d5da603813cbfba652a2a19c32ebcdb67b72bd13b4284032b70feab6"
+
+[[files]]
+file = "kubejs/server_scripts/downed/02_commands.js"
+hash = "cefc8ac92f5c172fdec3eaff5055f02aa451b7d70062a0b562c269d6d9026265"
+
+[[files]]
+file = "kubejs/server_scripts/lectern_particles/00_main.js"
+hash = "face65d9691e064a0236fedd3453966bda43d45aa86defdcebc2a078289ccaa6"
+
+[[files]]
+file = "kubejs/server_scripts/light_blocks/00_main.js"
+hash = "9e3b4a771d69ab22e7f967e68121823aafce5dee8065062620ae10124b8a6b74"
+
+[[files]]
+file = "kubejs/server_scripts/mushroom_resize/00_main.js"
+hash = "ec1b527d43d024b36a22c83ec233255607e4a6a6fbd579c002d9f91f76c5704f"
+
+[[files]]
+file = "kubejs/startup_scripts/downed/00_config.js"
+hash = "cccb3c8e96c2a7a690842193d14b351d6ae572f313f5e35bab1e1b73673dc523"
+
+[[files]]
+file = "kubejs/startup_scripts/downed/01_items.js"
+hash = "d98fee003755c0b33554161bcb90ab96e1c37a4b235db1db2ac2d866b2b4f1a0"
+
+[[files]]
+file = "kubejs/startup_scripts/mushroom_resize/00_items.js"
+hash = "57ce8ecd401c94d62c17181f92638e8dac055a6a975ca1f29e0e0183050b6ac2"
+
+[[files]]
 file = "mods/aeroengine-fuel-compat.pw.toml"
 hash = "df52e0b6a8ff45b37f66aae58fd3e4d3043d8937a2898c562ea5ed9991730206"
 metafile = true
@@ -97,7 +137,7 @@ metafile = true
 
 [[files]]
 file = "mods/better-advanced-tooltips.pw.toml"
-hash = "03084ff4f74cedc1b8ac6c85a98842f75956fb4fa811d285d8ca7caa8d54da5d"
+hash = "9009bd5cdcdbc6bc47a7fbb203844d9a551accdd796877bdba5233ac14bbd513"
 metafile = true
 
 [[files]]
@@ -191,13 +231,13 @@ hash = "75181b55e0407d1fca1e2f346c6501f919f5109545990ddfb66db9cd1b771f8a"
 metafile = true
 
 [[files]]
-file = "mods/coasters-engineered.pw.toml"
-hash = "184a62757a202dfa3a2f0d260e5123b7a168996ae730cfcc1f23c48b07a10e8f"
+file = "mods/coaster-track-styles.pw.toml"
+hash = "1ab47c2e45eaef9ca7ea075b59bff4984fdcdbe429505b3ab656a5396d80a1d0"
 metafile = true
 
 [[files]]
-file = "mods/coasters-simulated-track-styles.pw.toml"
-hash = "c4f72c052780e012157502ff4096bcc3c7353bdadc1a6c89a088205546d94130"
+file = "mods/coasters-engineered.pw.toml"
+hash = "7ed5fbbea31e9854422b4a39931de3cc8ce2fce1fc759a4b7a1b7799543e6282"
 metafile = true
 
 [[files]]
@@ -218,11 +258,6 @@ metafile = true
 [[files]]
 file = "mods/copycats.pw.toml"
 hash = "a7eb11401eda3779b7f2d6f32c2964511d5c71760573f2577d55c78ca800f8a3"
-metafile = true
-
-[[files]]
-file = "mods/coroutil.pw.toml"
-hash = "d901f874a1e09747b8d0d072c38c426eceead1f29c8ba36680f8f0082996b152"
 metafile = true
 
 [[files]]
@@ -337,7 +372,7 @@ metafile = true
 
 [[files]]
 file = "mods/create-coasters-simulated.pw.toml"
-hash = "792656064c1a91d6d5ec6add1e707c3c99b20668be099e836d6adff4703f43ae"
+hash = "d5aad6415413aa777ed89ae55912f33c86757321c7c16c8392ce2e1429b920d5"
 metafile = true
 
 [[files]]
@@ -856,11 +891,6 @@ hash = "e92248ff7e47d94175ee315550946858967e9f1076653468a1d10a6aa53a4d82"
 metafile = true
 
 [[files]]
-file = "mods/lionfish-api.pw.toml"
-hash = "64acab1580ca6edd8b1dd185e914aeee7aa551a88a7cd7f0f9370a82aaadfef6"
-metafile = true
-
-[[files]]
 file = "mods/lithium.pw.toml"
 hash = "51e129832b04acd57da470fc41725bad5e101b6a6b1d4901fd8ea7a92b14e13d"
 metafile = true
@@ -1067,7 +1097,7 @@ metafile = true
 
 [[files]]
 file = "mods/rhino.pw.toml"
-hash = "e55ca32b338a0e0540f4fec5170675d860566255ae0f45692a00cb4ebf2eb535"
+hash = "985a99f7465b68e43b98f3dbe1081b7113d957c7926a8caab163503528910f42"
 metafile = true
 
 [[files]]
@@ -1271,11 +1301,6 @@ hash = "2327c95d7332226e1d8c0372909367ee84c1ecedea9eacd84ddb8328a28d1350"
 metafile = true
 
 [[files]]
-file = "mods/yacl.pw.toml"
-hash = "539f362e9e192cf3b2813e0dfdfc51a5e6814129c6e82a9733842529beea6242"
-metafile = true
-
-[[files]]
 file = "mods/yungs-api.pw.toml"
 hash = "d0ad6ae032766815daeb9d5db6605a7fb90eecc3a066845f1b5836f006002aed"
 metafile = true
@@ -1326,14 +1351,6 @@ hash = "25f44960f8a331cafb3446c9388f959989aa01bd53a17a38766967f6cf20bb60"
 metafile = true
 
 [[files]]
-file = "pack.org"
-hash = "422e246d5d756e5125a515cdb2096fc12b767483fb4e970fbb555a646ba9a3fc"
-
-[[files]]
-file = "planning.org"
-hash = "147a98ca67ebdbf25ffc4a8c530bc5637837db4f8941e8085e863c1dddadb28c"
-
-[[files]]
 file = "resourcepacks/asyasas-legacy-copper.pw.toml"
 hash = "9995fc0f9650e6edfb2fc94c76a036cdb30a680b356fd36be0b5237984b13ae9"
 metafile = true
@@ -1341,4 +1358,13 @@ metafile = true
 [[files]]
 file = "resourcepacks/excalibur-ice-and-fire-ce-tablas-dragon-retextures.pw.toml"
 hash = "fcd985f0403090fcec3abc6a3946befa47c7a68e2313912609d2633daee734fd"
+metafile = true
+
+[[files]]
+file = "shaderpacks/BSL_v10.1.3.zip.txt"
+hash = "8246b6ba7549f632462d590e7b95aaa88bb42e46cf2de34308a02ad7185ad4d0"
+
+[[files]]
+file = "shaderpacks/bsl-shaders.pw.toml"
+hash = "714535884fcd760296204e91872acd3351e1fd94d20014f4b512b7c63825c271"
 metafile = true

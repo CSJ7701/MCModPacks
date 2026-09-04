@@ -1,0 +1,13 @@
+name = "Coasters Simulated: Track Styles"
+filename = "coasterssimulatedextratypes-1.1.0-hotfix1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/CXohJaWn/versions/zZz36rUT/coasterssimulatedextratypes-1.1.0-hotfix1.jar"
+hash-format = "sha512"
+hash = "fa0fd574b73d15ec3b2adc6205161f3bdce03e647268f7d4d18d564f63604a8c8e965a4b7af31c98d509df3acc13226e2e20fc684ea9d5113367f0b50b68738c"
+
+[update]
+[update.modrinth]
+mod-id = "CXohJaWn"
+version = "zZz36rUT"

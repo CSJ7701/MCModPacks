@@ -3,11 +3,11 @@ filename = "coastersengineered-1.21.1-1.1.0.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "3ab0d571b779fc2d4071d22b34bce22f9f85b4f1"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/guKf87OB/versions/CamxurQC/coastersengineered-1.21.1-1.1.0.jar"
+hash-format = "sha512"
+hash = "134f88b4f1711663472a9d00dda4fc1798a4b72a9efff84f99045d70c72a085df9ddd3a15a508c6255bff062abffbaf86a26186f7dc9456866e6f4fd8b2f18e2"
 
 [update]
-[update.curseforge]
-file-id = 8761537
-project-id = 1643631
+[update.modrinth]
+mod-id = "guKf87OB"
+version = "CamxurQC"

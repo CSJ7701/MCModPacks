@@ -1,0 +1,343 @@
+
+* Core - Complete
+- Create
+- Create Aeronautics
+- Create: Diesel Generators
+- Create: Power Grid
+- Midgard (Curseforge)
+- CC: Retweaked
+
+* Create Addons - COMPLETE
+
+** Decor
+- Create: Copycats+
+- Create: Deco
+- Create: Vibrant Vaults
+- Create: Design and Decor
+- Create: Bells and Whistles
+- Create: Rechiseled
+- Create: Encased
+- Create: Bits and Bobs
+- Create: Harmonics
+
+** Functionality
+- Create: Numismatics
+- Create: Enchantment Industry
+- Create: Power Loader
+- Create: Cobblestone
+- Create: Cobblestone Deepslate Generators
+- Create: Deep Seas
+- Create: Big Cannons
+- Create Big Cannons: Advanced Technologies
+- Create: Radars
+- Create Big Cannons: Equally Opposite  
+- Create: Propulsion Simulated
+- Create: Ballast
+- Create: Aeroworks
+- Create: Tracks+
+- Create Aeronautics: Gadgets and Gizmos
+- xxx Create Aeronautics: Delivery Required
+- Create: Aero Cables
+- Create Aeronautics: Transmission and Linkage
+- Create: Linear Bearing
+- AeroEngine
+- Create: Coasters Simulated
+- Coasters: Engineered (Curseforge)
+- Coasters Simulated: Track Styles (Curseforge)
+- Create: Coasters Extras (Curseforge)
+- Create: Additional Logistics
+- xxx Create: Pipes and Physics
+- Create: Pattern Schematics
+- Create: Shuffle Filter
+- Create: Connected
+- Create: Extra Gauges
+- Create: Liquid Fuel
+- Create: Copper and Zinc
+- Create: Ironworks
+- Create: Dreams and Desires
+- Create: Train Parts
+- Create: Railways Navigator
+- Create: Misc and Things
+- Create: Sound of Steam
+- Mech Trowel
+
+** Integration
+- Create: Slice and Dice (requires Farmer's Delight)
+- Create: Central Kitchen
+- xxx Carry On + Create Aeronautics Compat
+- Create Aeronautics: Compatibility
+- Create Aeronautics: Portable Engine Liquid Fuel
+- Create: Design n' Decor - Aeronautics Compat
+- Weather Physics (Wind, Sails & Tornadoes)
+- Aeronautics: Winds and Weather
+- Create: Relics plus
+- Create Contraption Terminals
+- KubeJS Diesel Generators
+- Create: Compatible Storage
+- AeroEngine fuel compat
+- Copycats+ aeronautics weight
+- Create Aeronautics: Rechiseled Compatibility
+
+
+
+* CC: Tweaked Addons - COMPLETE
+- CC:C Bridge
+- Tom's Peripherals
+- Create: CC Better Recipes
+- Create: CC Total Logistics
+- Create: Avionics
+- CC: Sable
+- Create Big Cannons: Peripherals
+- CC: Deep Seas
+- CCPowerGridCompat
+- CC;CPG: Pinout
+
+* Ars Nouveau - COMPLETE
+- Ars Nouveau
+- Ars Nouveau's Flavors & Delight
+- Ars Creo (Curseforge)
+- Ars Technica (Curseforge)
+- Create: Ars Nouveau Compat
+- StarbuncleMania (Curseforge)
+- Ars Sable (Curseforge)
+- Reliquified Ars Nouveau
+- Relics
+- Artifacts
+- xxx Compat Artifacts
+- Reliquified Artifacts
+- Lootr
+- KubeJS Ars Nouveau (Curseforge)
+
+  
+* MineColonies - COMPLETE
+- Minecolonies (Curseforge)
+- Minecolonies for Computercraft (Curseforge)
+- xxx Minecolonies EMI Integration (Curseforge)
+- JadeColonies (Curseforge)
+- StyleColonies (Curseforge)
+- Create & Minecolonies (Curseforge)
+- Minecolonies: Jade Crops Addon
+* KubeJS - COMPLETE
+- KubeJS
+- KubeJS Create
+- KubeJS Additions
+- Kube Utils
+- KubeJS Diesel Generators
+- KubeJS Delight
+- KubeJSable
+
+* Food - COMPLETE
+- Farmer's Delight
+- More Delight
+- Farmer's Delight: Extended
+- Ender's Delight
+- xxx Twilight's Flavor and Delight
+- Dungeoun's Delight
+- Storage Delight
+- Nearby Delight
+- xxx Aether's Delight
+- L_Ender's Cataclysm Delight
+
+* Gameplay - COMPLETE
+- End Remastered
+- End Remastered Additions
+- End Remastered ProMax
+- Eye Crushing
+- Eye Crushing Additions
+- Vanilla Backport
+- Aisleron
+
+** Difficulty / Survival
+- Thick Air
+- Weather Storms & Tornadoes
+- Serene Seasons
+- SeasonHud
+- Serene Seasons Plus
+- Burnt
+- Born in Chaos
+- L_Ender's Cataclysm
+- xxx Reliquified L_Ender's Cataclysm
+- Cataclysm Tools
+- Cataclysm Weaponry
+- Hardcore Revive+
+- Ender Dragon Fight Remastered
+- Multiplayer Bosses
+- Zombie Awareness
+- Illager Invasion
+- Illager Warship
+- Nyf's Spiders 2.0
+- Legendary Monsters
+- More Darkness
+- GraveStone Mod
+- Gravestone x Curios API Compat
+- Gravestone and Sable Compatibility Patch
+
+* Structures/Biomes - COMPLETE
+- Sparse Structures
+- Streams Reflowing - stopped here
+- Create: Let the Adventure Begin
+- Create: Rustic Structures
+- Create: Dynamic Village
+- Better Villages
+- Luki's Grand Capitals
+- Moog's Mineshafts Reimagined
+- Moog's End Structures
+- Moog's Nether Structures
+- Moog's Temples Reimagined
+- Moog's Voyager Structures
+- Moog's Voyager Structures Integrated
+- Yung's Better Dungeons
+- Yung's Better Ocean Monuments
+- Yung's Better Nether Fortresses
+- Yung's Better End Island (Maybe replace if I find an ender dragon fight overhaul I like)
+- Yung's Better Desert Temples
+- Yung's Better Strongholds
+- Yung's Better Witch Huts
+- BetterEnd: New Dawn
+- xxx The Twilight Forest (Curseforge)
+- xxx Reliquified Twilight Forest
+- xxx The Aether
+- xxx Deep Aether
+- xxx Aether Villages
+- Amplified Nether
+- BetterNether: New Dawn
+- When Dungeouns Arise
+- When Dungeouns Arise: Seven Seas
+- Ice and Fire: Community Edition
+
+* Storage - COMPLETE
+- Sophisticated Backpacks
+- Sophisticated Storage
+- Tom's Simple Storage
+
+* Blocks - COMPLETE
+- Supplementaries
+- Supplementaries Squared
+- Amendments
+- Chipped
+- Reintegrated: Chipped
+- Handcrafted
+- Rechiseled
+- Rechiseled: Create
+- Rechiseled: Chipped
+
+* UI / QOL - COMPLETE
+- Sodium
+- xxx Sodium Extra
+- xxx Sodium Dynamic Lights
+- LambDynamicLights
+- AmbientSounds
+- xxx Subtle Effects
+- JourneyMap
+- MapFrontiers
+- JourneyMap Integration
+- Open Parties and Claims
+- JourneyPAC
+- JEI
+- Just Enough Breeding
+- Just Enough Resources
+- Just Enough Professions
+- Just Enough Advancements
+- xxx Just Enough Filters
+- xxx EMI
+- xxx EMIffect
+- xxx EMI Loot
+- xxx EMI Enchanting
+- xxx EMI Ores
+- xxx EMI professions
+- xxx EMI Addon: Extra Mod Integrations
+- xxx EMI: Create Schematics
+- Jade
+- Jade Addons
+- Jade Sable Compat
+- Appleskin
+- xxx Carry On 
+- Mouse Tweaks
+- xxx Inventory Profiles Next
+- Controlling
+- Searchables
+- Armor Poser
+- Straw Statues
+- Sound Physics Remastered
+- Immersive Melodies
+- Immersive Paintings
+- The Immersive Music Mod
+- Distant Horizons
+- Spark
+- Particle Core
+
+* Quests
+- xxx FTB Quests (Curseforge)
+- xxx FTB Quests Optimizer
+
+* Performance - COMPLETE
+- FerriteCore
+- ModernFix
+- Lithium
+- Entity Culling
+- Krypton
+- ImmediatelyFast
+
+
+* Custom Functionality
+
+** Downed
+Makes death more punishing.
+New items:
+- Revival Token: Use when near a downed player to revive them instantly, with no health penalty
+- Health Token: Use to increase your maximum health
+
+New functionality:
+- Once you die, you won't be able to respawn until a configurable timer expires. If you try to respawn before then, you'll be placed into spectator near your death site. During this period, you can be revived by a player using a revival token, or an admin command. If revived this way, you will respawn at the site of your death with some brief buffs.
+- If you die and the timer expires before you are revived, you can respawn as normal. You will lose 1 max heart and respawn with some brief debuffs.
+- You cannot lose all your hearts. You will only lose max health to a configurable minimum
+
+** Lectern Particles
+You can use lecterns and writable books (unsigned. If you sign them this sometimes causes issues) to define particles at a point, within an area, or around a player.
+Particle definitions work worldwide, whether or not the lectern is loaded (in general the lectern must be loaded to *start* the effect, but then can be unloaded once the particles are going. I'm working on making this start immediately when a chunk is loaded, but for now you have to right click the lectern to start it).
+
+This works based on some specific syntax you put into the book.
+- "particle" - required. Defines the particle you want to spawn. 
+- "mode" - defaults to "point". Can be "point", "area", or "player".
+- "area" - defaults to "[1, 1, 1]". Specifies the area particles should spawn in for "area" and "player" mode.
+- "offset" - defaults to "[0, 1, 0]". Specifies the offset from the lectern (in "area" and "point" mode) or player (in "player" mode) for the particles to spawn
+- "count" - specifies the number of particles to spawn per tick. Defaults to "2" (will spawn every other tick).
+- "freq" - specifies the frequency with which particles should spawn. Lower numbers make particles spawn faster, with a minimum of 1. Defaults to "10".
+- "speed" - specifies the velocity imparted to particles when they spawn. High values can cause graphical weirdness. Defaults to "0.01".
+- "player" - the username of the player particles should follow in "player" mode. Defaults to "".
+
+** Survival Light Blocks
+Makes minecrafts "light" blocks craftable using 1 torch and 1 glass block.
+Light blocks are invisible in survival unless holding a light block in your main hand, but will still generate light.
+When holding a light block in your main hand, you will see end rod particles where you placed the block.
+
+You cannot break the block if you are not holding a light block in your main hand.
+Currently, breaking a placed light block does not drop the block itself.
+
+** Resizing Mushrooms
+Adds 2 new foods, a "growth morsel" and a "shrink morsel".
+Eating a growth morsel will increase your player size, along with some other properties (step height, speed, jump height, damage, etc).
+Eating a shrink morsel will decrease the same properties.
+
+*UNTESTED*: right clicking a mob with the morsels should change their size - unsure about other properties.
+
+
+
+* Notes
+- Water / Stream generation can be a bit weird at times, especially when dealing with underground lakes/rivers or elevation changes.
+- Recommend xxx memory allocated - can be laggy when generating chunks
+- One of the mods (quark I think) is replacing the modded trees from midgard. I think I want to disable quark
+  - In quark - change settings to disable trees
+  
+- Burnt doesn't seem compatible with the modded nether trees (this means the wood won't burn at all)
+
+- When running shaders, disable clouds to see weather2 clouds
+
+
+- DOWNED: health doesn't decrease properly when wait to revive until after timer is up. Need to implement some sort of check - probably a flag on clone event that prevents the downed event from firing if the player hasn't pressed "respawn" yet. We'd also need a flag on timer completion.
+  - So dying resets the "respawned" flag and starts the timer. If the timer finishes and the respawn flag isn't true, we set the "downed pending" flag to true and return without taking action. Then, on respawn/clone event, if "downed pending" is true, we execute our actions. If the "downed pending" flag is false and we press respawn, we go into spectator like normal.
+- LECTERN PARTICLES: Will spawn particles with empty book/lectern. Needs to look specifically for the "particle: " line.
+  - Needs to find a way to register particles on chunk load... not sure how feasible that is.
+- LIGHT BLOCKS: breaking does not drop the block.
+
+  

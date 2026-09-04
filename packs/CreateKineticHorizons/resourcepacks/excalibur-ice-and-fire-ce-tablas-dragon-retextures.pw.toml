@@ -1,0 +1,13 @@
+name = "Excalibur | Ice and Fire: Community Edition | Tabla's Dragon Ret"
+filename = "1.21.1_G's_Dragons_Retextured_I&F-CE.v5.zip"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/phrussqI/versions/vQjVsDGd/1.21.1_G%27s_Dragons_Retextured_I%26F-CE.v5.zip"
+hash-format = "sha512"
+hash = "60fbef6576f8d3e5e82622f9ea11f2528f3563e29e4003e651179b7d4e28396951cbc61c01e77676ef81abf8f1a89baaae0e38b3551907d221ae9288b20eeaae"
+
+[update]
+[update.modrinth]
+mod-id = "phrussqI"
+version = "vQjVsDGd"

@@ -1,0 +1,1308 @@
+#+TODO: ACTIVE(a) | DISABLED(d)
+#+TODO: TESTING(t) | BUGGY(b)
+#+PROPERTY: Side_ALL client server both
+#+PROPERTY: Source_ALL modrinth curseforge
+#+PROPERTY: Source_URL
+#+PROPERTY: Version_URL
+
+* Core & Mechanics
+** Create Base & Core Extensions
+*** ACTIVE Create
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create Aeronautics
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Diesel Generators
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Power Grid
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Middgard
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+*** ACTIVE CC: Tweaked
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+** Create Addons - Decor
+*** ACTIVE Create: Copycats+
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Deco
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Vibrant Vaults
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Design n' Decor
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Bells and Whistles
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Rechiseled
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Encased
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Bits 'n' Bobs
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Harmonics
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+** Create Addons - Functionality
+*** ACTIVE Create: Numismatics
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Enchantment Industry
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Power Loader
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Cobblestone
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Cobblestone Deepslate Generators
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Deep Seas
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Big Cannons
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create Big Cannons: Advanced Technologies
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Radars
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create Big Cannons: Equally Opposite
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Propulsion Simulated
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Ballast
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Aeroworks
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Tracks+
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create Aeronautics: Gadgets and Gizmos
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Create Aeronautics: Delivery Required
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Aero Cables
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create Aeronautics: Transmission & Linkage
+:PROPERTIES:
+:Source:   modrinth
+:END:
+*** ACTIVE Create Aeronautics: Toolgun
+:PROPERTIES:
+:Source:   modrinth
+:END:
+*** ACTIVE Create: Linear Bearing
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE AeroEngine
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Coasters Simulated
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Coasters: Engineered
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+*** ACTIVE Coasters Simulated: Track Styles
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+*** ACTIVE Create Coasters Extras
+:PROPERTIES:
+:Source:   curseforge
+:Version_URL: https://www.curseforge.com/minecraft/mc-mods/create-coasters-extras
+:END:
+
+*** ACTIVE Create: Coaster Seats
+:PROPERTIES:
+:Source: modrinth
+:END:
+
+*** ACTIVE Create: Additional Logistics
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Create: Pipes and Physics
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Pattern Schematics
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Shuffle Filter
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Connected
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Extra Gauges
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Liquid Fuel
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Copper and Zinc
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Ironworks
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Dreams and Desires
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Train Parts
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Railways Navigator
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Misc and Things
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Sound of Steam
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Mech Trowel
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+** Create Addons - Integrations
+*** ACTIVE Create: Slice and Dice
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Central Kitchen
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Carry On + Create Aeronautics Compat
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create Aeronautics: Compatibility
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create Aeronautics: Portable Engine Liquid Fuel
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Design n' Decor - Aeronautics Compat
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Weather Physics (Wind, Sails & Tornadoes)
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Aeronautics: Winds and Weather
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Relics plus
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create Contraption Terminals
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE KubeJS Diesel Generators
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Compatible Storage
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE AeroEngine fuel compat
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Copycats+ aeronautics weight
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create Aeronautics: Rechiseled Compatibility
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+** ComputerCraft & Peripherals
+*** ACTIVE CC:C Bridge
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Tom's Peripherals
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: CC Better Recipes
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: CC Total Logistics
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Avionics
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE CC: Sable
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create Big Cannons: Peripherals
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE CC: Deep Seas
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE CCPowerGridCompat
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE CC;CPG: Pinout
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+* World & Content
+** Magic & Progression
+*** ACTIVE Ars Nouveau
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Ars Nouveau's Flavors & Delight
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Ars Creo
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+*** ACTIVE Ars Technica
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+*** ACTIVE Create: Ars Nouveau Compat
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE StarbuncleMania
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+*** ACTIVE Ars Sable
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+*** ACTIVE Reliquified Ars Nouveau
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Relics
+:PROPERTIES:
+:Source:   modrinth
+:Version_URL: https://modrinth.com/mod/relics-mod/version/0.12.8
+:END:
+
+*** ACTIVE Artifacts
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Compat Artifacts
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Reliquified Artifacts
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Lootr
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE KubeJS Ars Nouveau
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+** Survival, Difficulty & Bosses
+*** ACTIVE End Remastered
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE End Remastered Additions
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE End Remastered ProMax
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Eye Crushing (End Remastered x Create)
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Eye Crushing Additions
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Vanilla Backport
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Aileron
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Thick Air
+CLOSED: [2026-09-04 Fri 18:58]
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Weather Storms & Tornadoes
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Serene Seasons
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE SeasonHud
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Serene Seasons Plus
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Burnt
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Born in Chaos
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE L_Ender's Cataclysm
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Reliquified L_Ender's Cataclysm
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Cataclysm Tools
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Cataclysm Weaponery
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Hardcore Revive+
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Ender Dragon Fight Remastered
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Multiplayer Bosses
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Zombie Awareness
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Illager Invasion
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Illager Warship
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Nyf's Spiders 2.0
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Legendary Monsters
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE More Darkness
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE GraveStone Mod
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Gravestone x Curios API Compat
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Gravestone and Sable Compatibility Patch
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+** World Generation, Structures & Biomes
+*** ACTIVE Sparse Structures
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Streams Reflowing
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Let the Adventure Begin
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Rustic Structures
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Create: Dynamic Village
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Better Villages
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Luki's Grand Capitals
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Moog's Mineshafts Reimagined
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Moog's End Structures
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Moog's Nether Structures
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Moog's Temples Reimagined
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Moog's Voyager Structures
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Moog's Voyager Structures Integrated
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Yung's Better Dungeons
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Yung's Better Ocean Monuments
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Yung's Better Nether Fortresses
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Yung's Better End Island
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Yung's Better Desert Temples
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Yung's Better Strongholds
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Yung's Better Witch Huts
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE BetterEnd: New Dawn
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED The Twilight Forest
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+*** DISABLED Reliquified Twilight Forest
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED The Aether
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Deep Aether
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Aether Villages
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Amplified Nether
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE BetterNether: New Dawn
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE When Dungeons Arise
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE When Dungeons Arise: Seven Seas
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Ice and Fire: Community Edition
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+** Colonies & Agriculture
+*** ACTIVE Minecolonies
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+*** ACTIVE Minecolonies for Computercraft
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+*** DISABLED Minecolonies EMI Integration
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+*** ACTIVE JadeColonies
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+*** ACTIVE StyleColonies
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+*** ACTIVE Create: MineColonies Link
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+*** ACTIVE Minecolonies: Jade Crops Addon
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Farmer's Delight
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE More Delight
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Farmer's Delight: Extended
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Ender's Delight
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Twilight's Flavor and Delight
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Dungeon's Delight
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Storage Delight
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Nearby Delight
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Aether's Delight
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE L_Ender's Cataclysm Delight
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+** Blocks & Decorative
+*** ACTIVE Supplementaries
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Supplementaries Squared
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Amendments
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Chipped
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Reintegrated: Chipped
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Handcrafted
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Rechiseled
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Rechiseled: Create
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Rechiseled: Chipped
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Quark
+:PROPERTIES:
+:Source:   modrinth
+:END:
+* Quality of Life & Interface
+** Storage & Logistics
+*** ACTIVE Sophisticated Backpacks
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Sophisticated Storage
+:PROPERTIES:
+:Source:   modrinth
+:Version_URL: https://modrinth.com/mod/sophisticated-storage
+:END:
+
+*** ACTIVE Tom's Simple Storage
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+** User Interface & Recipe Viewers
+*** ACTIVE JourneyMap
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE MapFrontiers
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE JourneyMap Integration
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Open Parties and Claims
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE JourneyPAC
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE JEI
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Just Enough Breeding
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Just Enough Resources
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Just Enough Professions
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Just Enough Advancements
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Just Enough Filters
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED EMI
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED EMIffect
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED EMI Loot
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED EMI Enchanting
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED EMI Ores
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED EMI professions
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED EMI Addon: Extra Mod Integrations
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED EMI: Create Schematics
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Jade
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Jade Addons
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Jade Sable Compat
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Iris
+:PROPERTIES:
+:Source:   modrinth
+:END:
+*** ACTIVE Appleskin
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Carry On
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Mouse Tweaks
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Inventory Profiles Next
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Controlling
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Searchables
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+** Atmosphere & Immersion
+*** ACTIVE AmbientSounds
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Subtle Effects
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Armor Poser
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Straw Statues
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Sound Physics Remastered
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Immersive Melodies
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Immersive Paintings
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE The Immersive Music Mod
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED FTB Quests
+:PROPERTIES:
+:Source:   curseforge
+:END:
+
+*** DISABLED FTB Quests Optimizer
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+* System & Utility
+** Scripting & Mod Customization
+*** ACTIVE KubeJS
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE KubeJS Create
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE KubeJS Additions
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Kube Utils
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE KubeJS Diesel Generators
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE KubeJS Delight
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE KubeJSable
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+** Performance & Rendering Optimization
+*** ACTIVE Sodium
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Sodium Extra
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** DISABLED Sodium Dynamic Lights
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE LambDynamicLights
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Distant Horizons
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Spark
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Particle Core
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE FerriteCore
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE ModernFix
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Lithium
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Entity Culling
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE Krypton Reno
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** ACTIVE ImmediatelyFast
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+* Custom Systems
+
+** Downed
+Makes death more punishing.
+New items:
+- Revival Token: Use when near a downed player to revive them instantly, with no health penalty
+- Health Token: Use to increase your maximum health
+
+New functionality:
+- Once you die, you won't be able to respawn until a configurable timer expires. If you try to respawn before then, you'll be placed into spectator near your death site. During this period, you can be revived by a player using a revival token, or an admin command. If revived this way, you will respawn at the site of your death with some brief buffs.
+- If you die and the timer expires before you are revived, you can respawn as normal. You will lose 1 max heart and respawn with some brief debuffs.
+- You cannot lose all your hearts. You will only lose max health to a configurable minimum
+
+** Lectern Particles
+You can use lecterns and writable books (unsigned. If you sign them this sometimes causes issues) to define particles at a point, within an area, or around a player.
+Particle definitions work worldwide, whether or not the lectern is loaded (in general the lectern must be loaded to *start* the effect, but then can be unloaded once the particles are going. I'm working on making this start immediately when a chunk is loaded, but for now you have to right click the lectern to start it).
+
+This works based on some specific syntax you put into the book.
+- "particle" - required. Defines the particle you want to spawn. 
+- "mode" - defaults to "point". Can be "point", "area", or "player".
+- "area" - defaults to "[1, 1, 1]". Specifies the area particles should spawn in for "area" and "player" mode.
+- "offset" - defaults to "[0, 1, 0]". Specifies the offset from the lectern (in "area" and "point" mode) or player (in "player" mode) for the particles to spawn
+- "count" - specifies the number of particles to spawn per tick. Defaults to "2" (will spawn every other tick).
+- "freq" - specifies the frequency with which particles should spawn. Lower numbers make particles spawn faster, with a minimum of 1. Defaults to "10".
+- "speed" - specifies the velocity imparted to particles when they spawn. High values can cause graphical weirdness. Defaults to "0.01".
+- "player" - the username of the player particles should follow in "player" mode. Defaults to "".
+
+** Survival Light Blocks
+Makes minecrafts "light" blocks craftable using 1 torch and 1 glass block.
+Light blocks are invisible in survival unless holding a light block in your main hand, but will still generate light.
+When holding a light block in your main hand, you will see end rod particles where you placed the block.
+
+You cannot break the block if you are not holding a light block in your main hand.
+Currently, breaking a placed light block does not drop the block itself.
+
+** Resizing Mushrooms
+Adds 2 new foods, a "growth morsel" and a "shrink morsel".
+Eating a growth morsel will increase your player size, along with some other properties (step height, speed, jump height, damage, etc).
+Eating a shrink morsel will decrease the same properties.
+
+*UNTESTED*: right clicking a mob with the morsels should change their size - unsure about other properties.
+
+* Notes
+- Water / Stream generation can be a bit weird at times, especially when dealing with underground lakes/rivers or elevation changes.
+- Recommend xxx memory allocated - can be laggy when generating chunks
+- One of the mods (quark I think) is replacing the modded trees from midgard. I think I want to disable quark
+  - In quark - change settings to disable trees
+  
+- Burnt doesn't seem compatible with the modded nether trees (this means the wood won't burn at all)
+
+- When running shaders, disable clouds to see weather2 clouds
+
+- DOWNED: health doesn't decrease properly when wait to revive until after timer is up. Need to implement some sort of check - probably a flag on clone event that prevents the downed event from firing if the player hasn't pressed "respawn" yet. We'd also need a flag on timer completion.
+  - So dying resets the "respawned" flag and starts the timer. If the timer finishes and the respawn flag isn't true, we set the "downed pending" flag to true and return without taking action. Then, on respawn/clone event, if "downed pending" is true, we execute our actions. If the "downed pending" flag is false and we press respawn, we go into spectator like normal.
+- LECTERN PARTICLES: Will spawn particles with empty book/lectern. Needs to look specifically for the "particle: " line.
+  - Needs to find a way to register particles on chunk load... not sure how feasible that is.
+- LIGHT BLOCKS: breaking does not drop the block.

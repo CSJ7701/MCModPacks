@@ -1,0 +1,13 @@
+name = "CCPowerGridCompat"
+filename = "ccpowergridcompat-1.0.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/qVlaUG9z/versions/HmKSGfmr/ccpowergridcompat-1.0.1.jar"
+hash-format = "sha512"
+hash = "055e3112b6481a684f176727cad1d63b8d82c334c34183c76b8ffc2b750712485b85a7d177fc4ecdc9b5b72a777dd64f6e9e06ffba57ca21931861f6434f56e1"
+
+[update]
+[update.modrinth]
+mod-id = "qVlaUG9z"
+version = "HmKSGfmr"

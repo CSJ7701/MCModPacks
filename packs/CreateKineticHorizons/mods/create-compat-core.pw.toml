@@ -1,0 +1,13 @@
+name = "Create: Compat Core"
+filename = "create_compat_core-1.0.0-neoforge-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/pJgR7pam/versions/HhkKb5Pm/create_compat_core-1.0.0-neoforge-1.21.1.jar"
+hash-format = "sha512"
+hash = "b4d198bac855aa50253949e7a4971de34761cf073ace5965632665e5a4a17594badaa2104c0332cd660f0535da45c3067aa5f91b715037bf749bf09da9aab5fa"
+
+[update]
+[update.modrinth]
+mod-id = "pJgR7pam"
+version = "HhkKb5Pm"

@@ -1,0 +1,13 @@
+name = "Create: Relics plus"
+filename = "createrelicsplus-1.5.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/fBKiTiw3/versions/OE2A0KVn/createrelicsplus-1.5.2.jar"
+hash-format = "sha512"
+hash = "2c24fb51f001b487d550a24f9fc6367b163a1cae351ea8635ca39c2c26d05cbd0ca859a58c2dddadb628017b51a2a9ae225d9228ac99f7441e2ff9bd4eff2a9d"
+
+[update]
+[update.modrinth]
+mod-id = "fBKiTiw3"
+version = "OE2A0KVn"

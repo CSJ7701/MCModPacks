@@ -1,0 +1,13 @@
+name = "Create: MineColonies Link"
+filename = "createminecolonies-1.5.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c37728da0f6256657bf5b7818ef905ef651547ae"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8725930
+project-id = 1550673

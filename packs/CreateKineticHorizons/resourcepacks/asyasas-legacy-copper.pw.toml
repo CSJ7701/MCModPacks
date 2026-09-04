@@ -1,0 +1,13 @@
+name = "AsYasya's Legacy Copper"
+filename = "AsYasya's Legacy Copper.zip"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/pxxzim58/versions/JLonJrBQ/AsYasya%27s%20Legacy%20Copper.zip"
+hash-format = "sha512"
+hash = "7c871a9325d95f9e2e77d886132e208defc7a91d9a767ffcebf184c7b64089b9d2f9a983c2d221d3c822881cb539b38fb3d8d3a353e7e3873a05c4e049333414"
+
+[update]
+[update.modrinth]
+mod-id = "pxxzim58"
+version = "JLonJrBQ"

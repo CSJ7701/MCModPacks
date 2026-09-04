@@ -1,0 +1,13 @@
+name = "End Remastered ProMax"
+filename = "end_remastered_promax-1.0.5.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/9bIWo80j/versions/5QNPo4y9/end_remastered_promax-1.0.5.jar"
+hash-format = "sha512"
+hash = "48d9497bca5eec316f40b690be88d3bec58d7a09d4bd5871b2f6771ac67734d4de32bbdcc85976402c8e8aba4abeba744516115887ad7dcb5af4f3cdd0679864"
+
+[update]
+[update.modrinth]
+mod-id = "9bIWo80j"
+version = "5QNPo4y9"

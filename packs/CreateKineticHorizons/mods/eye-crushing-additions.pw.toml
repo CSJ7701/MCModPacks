@@ -1,0 +1,13 @@
+name = "Eye Crushing Additions"
+filename = "eye-crushing-additions-1.0.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/A4q6v08K/versions/l8xyTRop/eye-crushing-additions-1.0.1.jar"
+hash-format = "sha512"
+hash = "b60aca29ac3b73e27596344eccd6f2d9c1aa79e241069b40c42fbf0cbc041cef12d537288147a613e92e412f40d3bac395263e36412e60f5effb62a976f3c08a"
+
+[update]
+[update.modrinth]
+mod-id = "A4q6v08K"
+version = "l8xyTRop"

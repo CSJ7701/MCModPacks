@@ -1,0 +1,13 @@
+name = "Tom's Peripherals"
+filename = "toms-peripherals-1.21-1.3.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/ljgxd2P8/versions/y8svVJBV/toms-peripherals-1.21-1.3.1.jar"
+hash-format = "sha512"
+hash = "9f952b4ece08eb0a5b69298fd2e8315e24fb5e27c1d195e51661e033d85ca1613e127ac21443f869b6be01697f11ce7d1d552f0a111cbb75f92080f16ac54110"
+
+[update]
+[update.modrinth]
+mod-id = "ljgxd2P8"
+version = "y8svVJBV"

@@ -1,0 +1,45 @@
+#+TODO: ACTIVE(a) | DISABLED(d)
+#+TODO: TESTING(t) | BUGGY(b)
+#+PROPERTY: Side_ALL client server both
+#+PROPERTY: Source_ALL modrinth curseforge
+#+PROPERTY: Source_URL
+#+PROPERTY: Version_URL
+# Version URL is for pinning a mods version. This will point directly to the file url. It will look like "https://www.curseforge.com/minecraft/mc-mods/indium/files/3535202" or "https://modrinth.com/mod/indium/version/mfNlBb6U". 
+
+* Core Mods
+
+** Create
+
+*** ACTIVE Create
+:PROPERTIES:
+:Side:     both
+:END:
+
+*** ACTIVE Create Aeronautics
+:PROPERTIES:
+:Side:     both
+:END:
+
+*** ACTIVE Create Diesel Generators
+
+*** ACTIVE Create: Power Grid
+
+* UI
+
+** ACTIVE Jade
+:PROPERTIES:
+:Side:     both
+:END:
+
+** ACTIVE Mouse Tweaks                                            :optional:
+:PROPERTIES:
+:Side:     client
+:END:
+
+** ACTIVE Sodium
+:PROPERTIES:
+:Side:     both
+:Source:   modrinth
+:Version_URL:  https://modrinth.com/mod/sodium/version/mc1.21.1-0.8.12-neoforge
+:END:
+

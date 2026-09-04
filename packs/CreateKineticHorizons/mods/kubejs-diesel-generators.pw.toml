@@ -1,0 +1,13 @@
+name = "KubeJS Diesel Generators"
+filename = "dg_js-1.21.1-1.2.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/10UMLVgM/versions/gIjWAdme/dg_js-1.21.1-1.2.4.jar"
+hash-format = "sha512"
+hash = "01e9fdc008fdff52be07caa3d8ab34e210de5bbfd4fae0882e4457938d67a05c39d93a44c64bf44b90dd15d156489200769159551e867581dfabf2dc0ba17ed6"
+
+[update]
+[update.modrinth]
+mod-id = "10UMLVgM"
+version = "gIjWAdme"

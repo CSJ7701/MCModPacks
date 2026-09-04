@@ -1,0 +1,13 @@
+name = "MMR - Moog's Mineshafts Reimagined"
+filename = "MoogsMineshaftsReimagined-1.21-1.0.3.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/z25hqseO/versions/gQlqjs2o/MoogsMineshaftsReimagined-1.21-1.0.3.jar"
+hash-format = "sha512"
+hash = "0feb0918b25bfa74c65fab3e1797aeb6ee12fc6d664740a226a08da0918674a7142f14edebd78cf634a8928f66649d671947101ffbcba697b1f2a7d3f2a000b7"
+
+[update]
+[update.modrinth]
+mod-id = "z25hqseO"
+version = "gQlqjs2o"

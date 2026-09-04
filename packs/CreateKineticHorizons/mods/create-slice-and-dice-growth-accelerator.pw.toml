@@ -1,0 +1,13 @@
+name = "Create Slice and Dice: Growth Accelerator"
+filename = "sadbettersprinklers-1.0.0.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/8nDI6Dgm/versions/xyzB5Vtq/sadbettersprinklers-1.0.0.jar"
+hash-format = "sha512"
+hash = "9f795ac07ad96c1787ceebf03cdb1ad194d84c8eb29bd213235a61a8afb68d80c6cf87508f7cffe663e833777cadc154d0afa1762c365578c61996ed20d17af3"
+
+[update]
+[update.modrinth]
+mod-id = "8nDI6Dgm"
+version = "xyzB5Vtq"

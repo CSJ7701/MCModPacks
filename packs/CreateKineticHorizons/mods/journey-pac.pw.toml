@@ -1,0 +1,13 @@
+name = "JourneyPAC"
+filename = "JourneyPAC-neoforge-1.21-1.1.7.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/UUErFmkX/versions/Q22HXCFT/JourneyPAC-neoforge-1.21-1.1.7.jar"
+hash-format = "sha512"
+hash = "367930b9fc3eaf78f78bb215524521905617e35d6c705e4b48153ae6eb8d08943f5c6398ebf5fa52025609d7cb0f607722b64deac0c99a55fc7854c67f06d82e"
+
+[update]
+[update.modrinth]
+mod-id = "UUErFmkX"
+version = "Q22HXCFT"

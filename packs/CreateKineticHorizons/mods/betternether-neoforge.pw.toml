@@ -1,0 +1,13 @@
+name = "BetterNether: New Dawn"
+filename = "BetterNether-21.0.26.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/fxX3RlL5/versions/TTPM28HH/BetterNether-21.0.26.jar"
+hash-format = "sha512"
+hash = "e86ce10f94169d975583881af0e6155f3b1a6ab5bbf5b36ad8d18209f3a9238adab35d9c22bcbdfb5f6c9635ec3f31c351ffd6d54255b965281d46b8a52ecd4a"
+
+[update]
+[update.modrinth]
+mod-id = "fxX3RlL5"
+version = "TTPM28HH"

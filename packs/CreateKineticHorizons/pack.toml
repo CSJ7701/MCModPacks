@@ -1,0 +1,13 @@
+name = "Create Kinetic Horizons"
+author = "Shipley7701"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "8821ac09b19aa6239822d4725440ee62968988cf3faf96662ac56568b9613c94"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.249"

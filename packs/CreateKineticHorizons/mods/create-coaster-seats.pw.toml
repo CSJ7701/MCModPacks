@@ -1,0 +1,13 @@
+name = "Create: Coaster Seats"
+filename = "createcoasterseats-1.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/du1KBA2p/versions/NMcs4FLe/createcoasterseats-1.1.jar"
+hash-format = "sha512"
+hash = "2b66075f47dfceceff0ebdde30f01211a4acf2e17f9f47506e5b8dec195fea767a87270e481de789d493534c7ba8d8a3e8fb6e49db711ada209d07dc87f293b4"
+
+[update]
+[update.modrinth]
+mod-id = "du1KBA2p"
+version = "NMcs4FLe"

@@ -1,0 +1,13 @@
+name = "Eye Crushing (End Remastered x Create)"
+filename = "eyecrushing-1.0.5.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/NFymBZmS/versions/vHdz9yXm/eyecrushing-1.0.5.jar"
+hash-format = "sha512"
+hash = "671d739ef9ecbd4a04921d15d31cef11d52f0826657d263d3066846b9fb2db738fc851e9990e1850bad9caf6f213ceb768ef9579e8903baffee0d5e72ff97005"
+
+[update]
+[update.modrinth]
+mod-id = "NFymBZmS"
+version = "vHdz9yXm"

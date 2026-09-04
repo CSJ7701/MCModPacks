@@ -1,0 +1,13 @@
+name = "MVSI - Moog's Voyager Structures Integrated"
+filename = "MoogsVoyagerStructuresIntegrated-1.21-1.0.2.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/cbWB9PF5/versions/mk0wPgOB/MoogsVoyagerStructuresIntegrated-1.21-1.0.2.jar"
+hash-format = "sha512"
+hash = "dad55c02a067a71a1d61e4f7870ecfc5d03fdc9b2e95e232cd347cb849e838fbed40c6f12552c8b2ecb05fe79d435dbd156e57ec251a1b7045d910e86f5c9c41"
+
+[update]
+[update.modrinth]
+mod-id = "cbWB9PF5"
+version = "mk0wPgOB"

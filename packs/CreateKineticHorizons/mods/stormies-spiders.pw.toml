@@ -1,0 +1,13 @@
+name = "Stormie's Spiders"
+filename = "stormiespiders-neoforge-1.21.1-3.3.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/3dsI6Hle/versions/cG9umJlY/stormiespiders-neoforge-1.21.1-3.3.1.jar"
+hash-format = "sha512"
+hash = "83a427fa6d657343142ce1e3c3de270899e2763befce2ff5c1b02044f75d77068d513cb9c6ede51b0eb654a81b3da930bdb563fa3b37eb22f70fbe99e8f4a66f"
+
+[update]
+[update.modrinth]
+mod-id = "3dsI6Hle"
+version = "cG9umJlY"

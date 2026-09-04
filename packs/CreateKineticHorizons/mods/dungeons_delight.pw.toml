@@ -1,0 +1,13 @@
+name = "Dungeon's Delight"
+filename = "neoforge-dungeonsdelight-1.21.1-1.5.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/qPfNr476/versions/aFluEQDH/neoforge-dungeonsdelight-1.21.1-1.5.0.jar"
+hash-format = "sha512"
+hash = "6cd90cef4465a87e75a57799db6e1cf3af5df04ba06d9cffe39524df20735c55938635f0dce6ab842b85800e4abbaf4ae874e8aa0eb20a4908a3ff9902184544"
+
+[update]
+[update.modrinth]
+mod-id = "qPfNr476"
+version = "aFluEQDH"

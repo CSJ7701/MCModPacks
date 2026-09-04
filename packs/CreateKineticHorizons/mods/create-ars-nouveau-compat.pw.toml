@@ -1,0 +1,13 @@
+name = "Create: Ars Nouveau Compat"
+filename = "create_ars_nouveau_compat-1.21.1-1.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/4ltoyGD0/versions/nZ7IFk2r/create_ars_nouveau_compat-1.21.1-1.1.jar"
+hash-format = "sha512"
+hash = "48759017cadf79a5faecad8e3e5bbb31a19390df99499932c00a54dbfc34513ecf8982a661dadc914dea90ed54d5c20a84ee20508b7e90187714706146d17711"
+
+[update]
+[update.modrinth]
+mod-id = "4ltoyGD0"
+version = "nZ7IFk2r"

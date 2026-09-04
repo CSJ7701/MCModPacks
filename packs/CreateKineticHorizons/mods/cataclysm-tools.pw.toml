@@ -1,0 +1,13 @@
+name = "Cataclysm Tools"
+filename = "cataclysm_tools-2.0.0-neoforge-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/7apv0bAM/versions/nCs17mDT/cataclysm_tools-2.0.0-neoforge-1.21.1.jar"
+hash-format = "sha512"
+hash = "ef1b6d9d5ad9281ced3209b359dba3470cf135ea2766fa787f2b7936298038dd216cc256b3cc3606ffb43ca72237b59c770266a8bd5acf8c0b818ed604e5938c"
+
+[update]
+[update.modrinth]
+mod-id = "7apv0bAM"
+version = "nCs17mDT"

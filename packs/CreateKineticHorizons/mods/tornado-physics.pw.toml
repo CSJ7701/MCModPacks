@@ -1,0 +1,13 @@
+name = "Weather Physics (Wind, Sails & Tornadoes)"
+filename = "tornadophysics-1.0.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/4GHC0z12/versions/DGpCSKoR/tornadophysics-1.0.3.jar"
+hash-format = "sha512"
+hash = "4054ba194f0e9919a681a0ce5761a5b469760f73fe68d605b2f8840aad3fac91e7094a7ef5da55d53bc9d1b048ebd5740ff63ea48c2c23e77a0c69232f595f29"
+
+[update]
+[update.modrinth]
+mod-id = "4GHC0z12"
+version = "DGpCSKoR"

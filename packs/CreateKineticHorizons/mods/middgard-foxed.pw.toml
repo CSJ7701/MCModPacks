@@ -1,0 +1,13 @@
+name = "Middgard Foxed"
+filename = "middgard-1.2.2-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/mIxnCpRW/versions/C38JW5LQ/middgard-1.2.2-1.21.1.jar"
+hash-format = "sha512"
+hash = "0e1052ceccc0b47cc249a047b7ccbdf45bd979bf16a517dbc4c827c8264c2e707262e1087c6f5b8d377aac16cab38d7b76432330410e888490268f29007d7795"
+
+[update]
+[update.modrinth]
+mod-id = "mIxnCpRW"
+version = "C38JW5LQ"

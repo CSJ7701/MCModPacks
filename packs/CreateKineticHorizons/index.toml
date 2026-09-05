@@ -137,7 +137,7 @@ metafile = true
 
 [[files]]
 file = "mods/better-advanced-tooltips.pw.toml"
-hash = "9009bd5cdcdbc6bc47a7fbb203844d9a551accdd796877bdba5233ac14bbd513"
+hash = "03084ff4f74cedc1b8ac6c85a98842f75956fb4fa811d285d8ca7caa8d54da5d"
 metafile = true
 
 [[files]]
@@ -258,6 +258,11 @@ metafile = true
 [[files]]
 file = "mods/copycats.pw.toml"
 hash = "a7eb11401eda3779b7f2d6f32c2964511d5c71760573f2577d55c78ca800f8a3"
+metafile = true
+
+[[files]]
+file = "mods/coroutil.pw.toml"
+hash = "d901f874a1e09747b8d0d072c38c426eceead1f29c8ba36680f8f0082996b152"
 metafile = true
 
 [[files]]
@@ -568,6 +573,11 @@ metafile = true
 [[files]]
 file = "mods/delight-lib.pw.toml"
 hash = "c4fb5bf78ad912a20ff50767f4e5cb64fd84f04d58db0c79bc728b643acc4038"
+metafile = true
+
+[[files]]
+file = "mods/diagonal-leaves.pw.toml"
+hash = "fd262df73bbf1364284dc4641596349667fc04ebea8b8767219bbbd33b11b658"
 metafile = true
 
 [[files]]
@@ -891,6 +901,11 @@ hash = "e92248ff7e47d94175ee315550946858967e9f1076653468a1d10a6aa53a4d82"
 metafile = true
 
 [[files]]
+file = "mods/lionfish-api.pw.toml"
+hash = "64acab1580ca6edd8b1dd185e914aeee7aa551a88a7cd7f0f9370a82aaadfef6"
+metafile = true
+
+[[files]]
 file = "mods/lithium.pw.toml"
 hash = "51e129832b04acd57da470fc41725bad5e101b6a6b1d4901fd8ea7a92b14e13d"
 metafile = true
@@ -926,8 +941,8 @@ hash = "1cb8c40a13f61da31fd0a038d94c5fc289765a88379940d39061411707dae1a2"
 metafile = true
 
 [[files]]
-file = "mods/middgard.pw.toml"
-hash = "9ea44b551c5d994ef298b9d7ac9e11b9be183a08390121ca78f66b3935bfa122"
+file = "mods/middgard-foxed.pw.toml"
+hash = "147a66b38365d683786c67db5d2fe6d24aa187a6d692fed22b950f18be8d5dac"
 metafile = true
 
 [[files]]
@@ -1022,7 +1037,7 @@ metafile = true
 
 [[files]]
 file = "mods/oh-the-trees-youll-grow.pw.toml"
-hash = "966dde29551f96d0cdec76c659bdec9b5a16c4a102ed053cb5a6e1e36860c75a"
+hash = "b586f666162c916d768532cbb98f390aa66f4998ca9ab0999bc4a9b7de5bb83f"
 metafile = true
 
 [[files]]
@@ -1097,7 +1112,7 @@ metafile = true
 
 [[files]]
 file = "mods/rhino.pw.toml"
-hash = "985a99f7465b68e43b98f3dbe1081b7113d957c7926a8caab163503528910f42"
+hash = "e55ca32b338a0e0540f4fec5170675d860566255ae0f45692a00cb4ebf2eb535"
 metafile = true
 
 [[files]]
@@ -1221,11 +1236,6 @@ hash = "62bd7012826fdcccf17a089055be67f87fb7335c88e73efc52bc9e51a1bf3188"
 metafile = true
 
 [[files]]
-file = "mods/supermartijn642s-core-lib.pw.toml"
-hash = "51c911d05e42b074fea01a74cb05050fa15164eed8a5d137cf0f64ecc16ed861"
-metafile = true
-
-[[files]]
 file = "mods/supplementaries-squared.pw.toml"
 hash = "46280c9487633e3bd1dd7bb24ccc4076058b2602d7dc2906f96509527346cf24"
 metafile = true
@@ -1237,7 +1247,7 @@ metafile = true
 
 [[files]]
 file = "mods/tectonic.pw.toml"
-hash = "003fc4f0346ef9fc643692f85236055b820830a531bc284275c3cc7a4ce7c8b3"
+hash = "fef2f8085bbdf6d398b02c87225ad9ccf9cc5d71edde13cd18e12a154764c84e"
 metafile = true
 
 [[files]]
@@ -1258,11 +1268,6 @@ metafile = true
 [[files]]
 file = "mods/towntalk.pw.toml"
 hash = "a7074e8e499d34f5ce633dbd33f818e376dd1941ec5b1d97a33acd019df69b5a"
-metafile = true
-
-[[files]]
-file = "mods/treeplacer.pw.toml"
-hash = "9d6cbb30ac025acb0bdabe4ef1bc324ee57ccc46347720a81a8a4d8aaa3423f5"
 metafile = true
 
 [[files]]
@@ -1298,6 +1303,11 @@ metafile = true
 [[files]]
 file = "mods/wunderlib-neoforge.pw.toml"
 hash = "2327c95d7332226e1d8c0372909367ee84c1ecedea9eacd84ddb8328a28d1350"
+metafile = true
+
+[[files]]
+file = "mods/yacl.pw.toml"
+hash = "539f362e9e192cf3b2813e0dfdfc51a5e6814129c6e82a9733842529beea6242"
 metafile = true
 
 [[files]]

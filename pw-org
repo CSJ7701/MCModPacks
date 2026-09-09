@@ -72,6 +72,23 @@ def parse_org_mods(org_path: Path):
     return active_mods
 
 
+def get_packwiz_mods(pack_dir: Path) -> list[str]:
+    """Runs 'packwiz list' and returns a list of installed mod names."""
+    res = subprocess.run(["packwiz", "list"], cwd=pack_dir, capture_output=True, text=True)
+    if res.returncode != 0:
+        console.print(f"[bold red]Error running packwiz list:[/] {res.stderr.strip()}", style="red")
+        sys.exit(1)
+    
+    # Filter out empty lines or header/footer noise if any
+    mods = [line.strip() for line in res.stdout.splitlines() if line.strip()]
+    return mods
+
+
+def normalize_name(name: str) -> str:
+    """Normalizes a string for loose matching (alphanumeric only, lowercase)."""
+    return re.sub(r"[^a-zA-Z0-9]", "", name).lower()
+
+
 def get_mod_issues(mods: list[dict]) -> list[str]:
     """Evaluates mods for missing or invalid source configurations."""
     issues = []
@@ -116,8 +133,8 @@ def clean_existing_mods(pack_dir: Path, active_mod_names: set):
         slug_name = mod_file.stem.lower()
 
         is_active = any(
-            re.sub(r"[^a-zA-Z0-9]", "", active_name.lower()) in re.sub(r"[^a-zA-Z0-9]", "", slug_name)
-            or re.sub(r"[^a-zA-Z0-9]", "", slug_name) in re.sub(r"[^a-zA-Z0-9]", "", active_name.lower())
+            normalize_name(active_name) in normalize_name(slug_name)
+            or normalize_name(slug_name) in normalize_name(active_name)
             for active_name in active_mod_names
         )
 
@@ -158,7 +175,7 @@ def install_or_update_mod(mod: dict, pack_dir: Path, retries: int = 3) -> tuple[
         else:
             err = ""
         raw_output = (err + "\n" + res.stdout).strip()
-        if "invalid character '<'" in raw_output and attempt < retries -1:
+        if "invalid character '<'" in raw_output and attempt < retries - 1:
             # Exponential backoff delay (1s, 2s, 4s...)
             time.sleep(2 ** attempt)
             continue
@@ -269,6 +286,56 @@ def cmd_sync(args):
     console.print(summary_table)
 
 
+def cmd_diff(args):
+    check_packwiz_installed()
+    validate_packwiz_dir(args.pack_dir)
+
+    org_mods = parse_org_mods(args.org_file)
+    org_names = [m["name"] for m in org_mods]
+    packwiz_mods = get_packwiz_mods(args.pack_dir)
+
+    # Normalize names to perform fuzzy matching
+    norm_org_map = {normalize_name(name): name for name in org_names}
+    norm_pw_map = {normalize_name(name): name for name in packwiz_mods}
+
+    # Find mods in Org but not in Packwiz
+    in_org_not_pw = []
+    for norm_org, orig_org in norm_org_map.items():
+        if not any(norm_org in norm_pw or norm_pw in norm_org for norm_pw in norm_pw_map.keys()):
+            in_org_not_pw.append(orig_org)
+
+    # Find mods in Packwiz but not in Org
+    in_pw_not_org = []
+    for norm_pw, orig_pw in norm_pw_map.items():
+        if not any(norm_pw in norm_org or norm_org in norm_pw for norm_org in norm_org_map.keys()):
+            in_pw_not_org.append(orig_pw)
+
+    if not in_org_not_pw and not in_pw_not_org:
+        console.print(
+            Panel(
+                "[bold green]Org file and Packwiz pack are perfectly in sync![/]",
+                border_style="green",
+            )
+        )
+        return
+
+    table = Table(
+        title=f"Modpack Discrepancy Diff ({args.org_file.name} vs {args.pack_dir.name})",
+        show_header=True,
+        header_style="bold yellow",
+    )
+    table.add_column("In Org, missing from Packwiz (-y failed or unsynced)", style="cyan")
+    table.add_column("In Packwiz, missing from Org (misidentified / extra)", style="magenta")
+
+    max_rows = max(len(in_org_not_pw), len(in_pw_not_org))
+    for i in range(max_rows):
+        org_val = in_org_not_pw[i] if i < len(in_org_not_pw) else ""
+        pw_val = in_pw_not_org[i] if i < len(in_pw_not_org) else ""
+        table.add_row(org_val, pw_val)
+
+    console.print(table)
+
+
 def cmd_stats(args):
     mods = parse_org_mods(args.org_file)
 
@@ -365,6 +432,20 @@ def main():
         help="Directory containing configs/kubejs/overrides to sync into pack",
     )
     parser_sync.set_defaults(func=cmd_sync)
+
+    # pw-org diff
+    parser_diff = subparsers.add_parser(
+        "diff", help="Diff active org mods against installed packwiz mods."
+    )
+    parser_diff.add_argument("org_file", type=Path, help="Path to .org modpack file")
+    parser_diff.add_argument(
+        "pack_dir",
+        type=Path,
+        nargs="?",
+        default=Path.cwd(),
+        help="Packwiz pack directory (defaults to current directory)",
+    )
+    parser_diff.set_defaults(func=cmd_diff)
 
     # pw-org stats
     parser_stats = subparsers.add_parser(

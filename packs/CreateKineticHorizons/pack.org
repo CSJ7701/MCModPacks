@@ -1330,5 +1330,5 @@ Eating a shrink morsel will decrease the same properties.
 
 - DOWNED: health doesn't decrease properly when wait to revive until after timer is up. Need to implement some sort of check - probably a flag on clone event that prevents the downed event from firing if the player hasn't pressed "respawn" yet. We'd also need a flag on timer completion.
   - So dying resets the "respawned" flag and starts the timer. If the timer finishes and the respawn flag isn't true, we set the "downed pending" flag to true and return without taking action. Then, on respawn/clone event, if "downed pending" is true, we execute our actions. If the "downed pending" flag is false and we press respawn, we go into spectator like normal.
-
+ 
 

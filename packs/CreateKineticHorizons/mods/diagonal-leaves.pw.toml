@@ -1,6 +1,6 @@
 name = "Diagonal Leaves"
 filename = "diagonal_leaves-neoforge-1.21.1-0.1.1.jar"
-side = "server"
+side = "both"
 
 [download]
 url = "https://cdn.modrinth.com/data/WLTayYUn/versions/2tMNDYdB/diagonal_leaves-neoforge-1.21.1-0.1.1.jar"

@@ -31,10 +31,25 @@
 :PROPERTIES:
 :Source:   modrinth
 :END:
-
+**** ACTIVE Lithostitched
+:PROPERTIES:
+:Source:   modrinth
+:Side:     both
+:END:
+**** ACTIVE Diagonal Leaves
+:PROPERTIES:
+:Source:   modrinth
+:Side:     both
+:END:
+**** ACTIVE ohthetreesyoullgrow
+:PROPERTIES:
+:Source:   modrinth
+:Version_URL: https://modrinth.com/mod/oh-the-trees-youll-grow/version/1.21.1-5.3.2-NeoForge
+:END:
 *** ACTIVE CC: Tweaked
 :PROPERTIES:
 :Source:   modrinth
+:Version_URL: https://modrinth.com/mod/cc-tweaked/version/1ewzHZYg
 :END:
 
 ** Create Addons - Decor
@@ -242,6 +257,11 @@
 :PROPERTIES:
 :Source:   modrinth
 :END:
+**** ACTIVE Deployer
+:PROPERTIES:
+:Source:   modrinth
+:Side:     both
+:END:
 
 *** ACTIVE Create: Liquid Fuel
 :PROPERTIES:
@@ -324,7 +344,7 @@
 :Source:   modrinth
 :END:
 
-*** ACTIVE Aeronautics: Winds and Weather
+*** ACTIVE Aeronautics: Winds & Weather
 :PROPERTIES:
 :Source:   modrinth
 :END:
@@ -466,11 +486,7 @@
 *** ACTIVE Artifacts
 :PROPERTIES:
 :Source:   modrinth
-:END:
-
-*** DISABLED Compat Artifacts
-:PROPERTIES:
-:Source:   modrinth
+:Version_URL: https://modrinth.com/mod/artifacts/version/13.2.3
 :END:
 
 *** ACTIVE Reliquified Artifacts
@@ -545,11 +561,6 @@ CLOSED: [2026-09-04 Fri 18:58]
 :Source:   modrinth
 :END:
 
-*** ACTIVE Serene Seasons Plus
-:PROPERTIES:
-:Source:   modrinth
-:END:
-
 *** ACTIVE Burnt
 :PROPERTIES:
 :Source:   modrinth
@@ -576,11 +587,6 @@ CLOSED: [2026-09-04 Fri 18:58]
 :END:
 
 *** ACTIVE Cataclysm Weaponery
-:PROPERTIES:
-:Source:   modrinth
-:END:
-
-*** ACTIVE Hardcore Revive+
 :PROPERTIES:
 :Source:   modrinth
 :END:
@@ -634,7 +640,11 @@ CLOSED: [2026-09-04 Fri 18:58]
 :PROPERTIES:
 :Source:   modrinth
 :END:
-
+**** ACTIVE baguettelib
+:PROPERTIES:
+:Source:   modrinth
+:Version_URL: https://modrinth.com/mod/baguettelib/version/2.0.6
+:END:
 *** ACTIVE Gravestone and Sable Compatibility Patch
 :PROPERTIES:
 :Source:   modrinth
@@ -802,7 +812,8 @@ CLOSED: [2026-09-04 Fri 18:58]
 :Source:   curseforge
 :END:
 
-*** ACTIVE Minecolonies for Computercraft
+*** DISABLED Minecolonies for Computercraft
+CLOSED: [2026-09-05 Sat 19:31]
 :PROPERTIES:
 :Source:   curseforge
 :END:
@@ -861,6 +872,11 @@ CLOSED: [2026-09-04 Fri 18:58]
 :PROPERTIES:
 :Source:   modrinth
 :END:
+**** ACTIVE runiclib
+:PROPERTIES:
+:Source:   modrinth
+:Version_URL: https://modrinth.com/mod/runiclib/version/tk5EQpUG
+:END:
 
 *** ACTIVE Storage Delight
 :PROPERTIES:
@@ -917,7 +933,11 @@ CLOSED: [2026-09-04 Fri 18:58]
 :PROPERTIES:
 :Source:   modrinth
 :END:
-
+**** ACTIVE supermartijn642corelib
+:PROPERTIES:
+:Source:   modrinth
+:Version_URL: https://modrinth.com/mod/supermartijn642s-core-lib/version/1.1.24-neoforge-mc1.21
+:END:
 *** ACTIVE Rechiseled: Create
 :PROPERTIES:
 :Source:   modrinth
@@ -1158,6 +1178,11 @@ CLOSED: [2026-09-04 Fri 18:58]
 :Source:   modrinth
 :END:
 
+*** ACTIVE LootJS
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
 *** ACTIVE KubeJS Additions
 :PROPERTIES:
 :Source:   modrinth
@@ -1293,7 +1318,7 @@ Eating a shrink morsel will decrease the same properties.
 
 * Notes
 - Water / Stream generation can be a bit weird at times, especially when dealing with underground lakes/rivers or elevation changes.
-- Recommend xxx memory allocated - can be laggy when generating chunks
+- Recommend at least 9000 max memory allocated - can be laggy when generating chunks
 - One of the mods (quark I think) is replacing the modded trees from midgard. I think I want to disable quark
   - In quark - change settings to disable trees
   
@@ -1301,8 +1326,9 @@ Eating a shrink morsel will decrease the same properties.
 
 - When running shaders, disable clouds to see weather2 clouds
 
+- Will want to add "xxx" to jave arguments. This is a more effective garbage collector.
+
 - DOWNED: health doesn't decrease properly when wait to revive until after timer is up. Need to implement some sort of check - probably a flag on clone event that prevents the downed event from firing if the player hasn't pressed "respawn" yet. We'd also need a flag on timer completion.
   - So dying resets the "respawned" flag and starts the timer. If the timer finishes and the respawn flag isn't true, we set the "downed pending" flag to true and return without taking action. Then, on respawn/clone event, if "downed pending" is true, we execute our actions. If the "downed pending" flag is false and we press respawn, we go into spectator like normal.
-- LECTERN PARTICLES: Will spawn particles with empty book/lectern. Needs to look specifically for the "particle: " line.
-  - Needs to find a way to register particles on chunk load... not sure how feasible that is.
-- LIGHT BLOCKS: breaking does not drop the block.
+
+

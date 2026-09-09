@@ -24,12 +24,18 @@ BlockEvents.rightClicked('minecraft:light', event => {
 
 // Left-click in Survival to break Light Block
 BlockEvents.leftClicked('minecraft:light', event => {
-  const { block, player, level } = event
+    const { block, player, level } = event
 
-  // Instantly break block in survival or creative when hit
-  level.destroyBlock(block.pos, true, player)
-  player.swing()
-  event.cancel()
+    // Instantly break block in survival or creative when hit
+    level.destroyBlock(block.pos, true, player)
+
+    // Give the "broken" block back.
+    // Minecraft sets 'minecraft:light' as unbreakable, and I don't know how to override that.
+    // Because of this, we can't properly edit the loot table since the block never breaks
+    player.give('minecraft:light')
+    
+    player.swing()
+    event.cancel()
 })
 
 // Particle indicator tick for Survival players holding light blocks

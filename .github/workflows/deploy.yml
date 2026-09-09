@@ -1,11 +1,12 @@
-name: Deploy Modpack Downloads & Pages
+name: Build, Release & Deploy Site
 
 on:
   push:
-    branches: ["main"]
+    tags:
+      - 'v*' # Triggers when you push a tag like v1.0.0
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -14,12 +15,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build-and-release:
     runs-on: ubuntu-latest
-
+    outputs:
+      tag_name: ${{ github.ref_name }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -32,79 +31,67 @@ jobs:
       - name: Install packwiz
         run: go install github.com/packwiz/packwiz@dfd8b68a4796c763e25bad50265ea1f1233e24f1
 
-      - name: Build Packs & Generate Site Data
+      - name: Build Pack Archives
+        run: |
+          mkdir -p build_output
+          for pack_dir in packs/*; do
+            if [ -d "$pack_dir" ]; then
+              PACK_ID=$(basename "$pack_dir")
+              (
+                cd "$pack_dir" || exit 1
+                packwiz modrinth export -o "../../build_output/${PACK_ID}.mrpack"
+                packwiz curseforge export -o "../../build_output/${PACK_ID}-curseforge.zip"
+              )
+            fi
+          done
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build_output/*
+          generate_release_notes: true
+
+  deploy-pages:
+    needs: build-and-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Build Site & Manifest
         run: |
           mkdir -p dist/packs
-                            
-          if [ -d "site" ]; then
-          cp -r site/* dist/
-          fi
+          if [ -d "site" ]; then cp -r site/* dist/; fi
 
           MANIFEST="["
 
           for pack_dir in packs/*; do
-          if [ -d "$pack_dir" ]; then
-          PACK_ID=$(basename "$pack_dir")
-          echo "Building pack: $PACK_ID"
-                            
-          mkdir -p "dist/packs/$PACK_ID"
-          cd "$pack_dir"
-          
-          # 1. Export Modrinth pack
-          packwiz modrinth export -o "../../dist/packs/$PACK_ID/$PACK_ID-modrinth.mrpack"
+            if [ -d "$pack_dir" ]; then
+              PACK_ID=$(basename "$pack_dir")
+              mkdir -p "dist/packs/$PACK_ID"
 
-          # 2. Export CurseForge pack
-          packwiz curseforge export --side client -o "../../dist/packs/$PACK_ID/$PACK_ID-client-curseforge.zip"
-          packwiz curseforge export --side server -o "../../dist/packs/$PACK_ID/$PACK_ID-server-curseforge.zip"
+              # 1. Generate Mod List
+              MODLIST_FILE="dist/packs/$PACK_ID/modlist.txt"
+              echo "# Mod List for $PACK_ID" > "$MODLIST_FILE"
+              if [ -d "$pack_dir/mods" ]; then
+                python3 -c '
+import glob, re
+mods = []
+for file in glob.glob("'$pack_dir'/mods/*.toml"):
+    with open(file, "r", encoding="utf-8") as f:
+        content = f.read()
+        name_match = re.search(r"^name\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
+        if name_match:
+            mods.append(name_match.group(1))
+mods.sort(key=lambda x: x.lower())
+for line in mods: print(line)
+' >> "$MODLIST_FILE"
+              fi
 
-          # 3. Clean Mod List generation with Mod Name & Version
-          MODLIST_FILE="../../dist/packs/$PACK_ID/modlist.txt"
-          echo "# Mod List for $PACK_ID" > "$MODLIST_FILE"
-          echo "" >> "$MODLIST_FILE"
-
-          if [ -d "mods" ]; then
-          python3 -c '
-          import os, glob, re
-
-          mods = []
-          for file in glob.glob("mods/*.toml"):
-            with open(file, "r", encoding="utf-8") as f:
-              content = f.read()
-                                
-              # Extract Name
-              name_match = re.search(r"^name\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
-              name = name_match.group(1) if name_match else None
-                                
-              # Extract filename from [download] or root
-              file_match = re.search(r"^\s*filename\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
-              filename = file_match.group(1) if file_match else None
-
-              side_match = re.search(r"^\s*side\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
-              side = side_match.group(1) if side_match else "both"
-
-              if name:
-                label = f"{name} ({filename})" if filename else name
-                if side != "both":
-                  label += f" [{side}]"
-                mods.append(label)
-
-          # Sort alphabetically by mod name
-          mods.sort(key=lambda x: x[0].lower())
-
-          for line in mods:
-            print(line)
-          ' >> "$MODLIST_FILE"
-          fi
-
-          cd ../..
-
-          # Copy metadata.json if it exists
-          if [ -f "$pack_dir/metadata.json" ]; then
-          cp "$pack_dir/metadata.json" "dist/packs/$PACK_ID/metadata.json"
-          fi
-
-          MANIFEST="${MANIFEST}{\"id\":\"${PACK_ID}\",\"mrpack\":\"packs/${PACK_ID}/${PACK_ID}-modrinth.mrpack\",\"client_curseforge\":\"packs/${PACK_ID}/${PACK_ID}-client-curseforge.zip\",\"server_curseforge\":\"packs/${PACK_ID}/${PACK_ID}-server-curseforge.zip\",\"modlist\":\"packs/${PACK_ID}/modlist.txt\"},"
-          fi
+              # 2. Append to Manifest with Release URLs
+              RELEASE_BASE="https://github.com/${{ github.repository }}/releases/latest/download"
+              MANIFEST="${MANIFEST}{\"id\":\"${PACK_ID}\",\"mrpack\":\"${RELEASE_BASE}/${PACK_ID}.mrpack\",\"curseforge\":\"${RELEASE_BASE}/${PACK_ID}-curseforge.zip\",\"modlist\":\"packs/${PACK_ID}/modlist.txt\"},"
+            fi
           done
 
           MANIFEST="${MANIFEST%,}]"

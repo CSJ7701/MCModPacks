@@ -66,8 +66,17 @@ async function createPackCardOld(pack) {
       <p class="pack-desc">${escapeHtml(meta.description)}</p>
     </div>
     <div class="actions">
-      <a class="btn btn-sage" href="${pack.mrpack}" download>Modrinth Pack (.mrpack)</a>
-      <a class="btn btn-green" href="${pack.curseforge}" download>CurseForge Pack (.zip)</a>
+      <div class="dropdown">
+        <button class="btn btn-sage dropdown-toggle" onclick="toggleDropdown(event)">
+          Download Modpack <span class="caret">▾</span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="${pack.mrpack}" download>Modrinth (.mrpack)</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="${pack.client_curseforge}" download>Client — CurseForge (.zip)</a>
+          <a class="dropdown-item" href="${pack.server_curseforge}" download>Server — CurseForge (.zip)</a>
+        </div>
+      </div>
       <button class="btn btn-neutral" onclick="viewModList('${pack.modlist}', '${escapeHtml(meta.name)}')">View Mod List</button>
     </div>
   `;
@@ -77,20 +86,20 @@ async function createPackCardOld(pack) {
 
 async function createPackCard(pack) {
     let meta = {
-	name: pack.id.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase()),
-	version: "1.0.0",
-	description: "No metadata.json provided for this pack.",
-	icon: null
+        name: pack.id.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase()),
+        version: "1.0.0",
+        description: "No metadata.json provided for this pack.",
+        icon: null
     };
 
     try {
-	const metaRes = await fetch(`packs/${pack.id}/metadata.json`);
-	if (metaRes.ok) {
-	    const fetchedMeta = await metaRes.json();
-	    meta = { ...meta, ...fetchedMeta };
-	}
+        const metaRes = await fetch(`packs/${pack.id}/metadata.json`);
+        if (metaRes.ok) {
+            const fetchedMeta = await metaRes.json();
+            meta = { ...meta, ...fetchedMeta };
+        }
     } catch (e) {
-	// Graceful fallback if metadata.json fails
+        // Graceful fallback if metadata.json fails
     }
 
     const iconSrc = meta.icon ? meta.icon : FALLBACK_ICON;
@@ -110,17 +119,8 @@ async function createPackCard(pack) {
       <p class="pack-desc">${escapeHtml(meta.description)}</p>
     </div>
     <div class="actions">
-      <div class="dropdown">
-        <button class="btn btn-sage dropdown-toggle" onclick="toggleDropdown(event)">
-          Download Modpack <span class="caret">▾</span>
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="${pack.mrpack}" download>Modrinth (.mrpack)</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="${pack.client_curseforge}" download>Client — CurseForge (.zip)</a>
-          <a class="dropdown-item" href="${pack.server_curseforge}" download>Server — CurseForge (.zip)</a>
-        </div>
-      </div>
+      <a class="btn btn-sage" href="${pack.mrpack}">Modrinth (.mrpack)</a>
+      <a class="btn btn-green" href="${pack.curseforge}">CurseForge (.zip)</a>
       <button class="btn btn-neutral" onclick="viewModList('${pack.modlist}', '${escapeHtml(meta.name)}')">View Mod List</button>
     </div>
   `;

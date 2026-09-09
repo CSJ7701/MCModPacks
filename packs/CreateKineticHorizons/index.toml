@@ -51,9 +51,8 @@ hash = "3637f8c7e237525c908ef902ab13765be9b7c885e22a5ec0532561a13af7ba48"
 metafile = true
 
 [[files]]
-file = "mods/aeronautics-winds-and-weather.pw.toml"
+file = "mods/aeronautics-winds-and-weather.pw.toml.disabled"
 hash = "d646cafcdd2bad02098fde9d87a6f6a35ff1a0567a60b531c3de74a151c9b472"
-metafile = true
 
 [[files]]
 file = "mods/aileron.pw.toml"

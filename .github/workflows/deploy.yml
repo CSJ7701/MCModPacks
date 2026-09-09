@@ -73,22 +73,44 @@ jobs:
               # 1. Generate Mod List
               MODLIST_FILE="dist/packs/$PACK_ID/modlist.txt"
               echo "# Mod List for $PACK_ID" > "$MODLIST_FILE"
+              echo "" >> "$MODLIST_FILE"
+
               if [ -d "$pack_dir/mods" ]; then
-                python3 -c '
-                import glob, re
-                mods = []
-                for file in glob.glob("'$pack_dir'/mods/*.toml"):
-                  with open(file, "r", encoding="utf-8") as f:
-                    content = f.read()
-                    name_match = re.search(r"^name\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
-                    if name_match:
-                      mods.append(name_match.group(1))
-                mods.sort(key=lambda x: x.lower())
-                for line in mods: print(line)
-                ' >> "$MODLIST_FILE"
+                python3 - "$pack_dir" << 'EOF' >> "$MODLIST_FILE"
+import sys, glob, re
+
+pack_dir = sys.argv[1]
+mods = []
+
+for file in glob.glob(f"{pack_dir}/mods/*.toml"):
+    with open(file, "r", encoding="utf-8") as f:
+        content = f.read()
+        name_match = re.search(r"^name\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
+        filename_match = re.search(r"^\s*filename\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
+        side_match = re.search(r"^\s*side\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
+
+        if name_match:
+            name = name_match.group(1)
+            filename = filename_match.group(1) if filename_match else None
+            side = side_match.group(1) if side_match else "both"
+
+            label = f"{name} ({filename})" if filename else name
+            if side != "both":
+                label += f" [{side}]"
+            mods.append(label)
+
+mods.sort(key=lambda x: x.lower())
+for line in mods:
+    print(line)
+EOF
               fi
 
-              # 2. Append to Manifest with Release URLs
+              # 2. Copy metadata.json if it exists
+              if [ -f "$pack_dir/metadata.json" ]; then
+                cp "$pack_dir/metadata.json" "dist/packs/$PACK_ID/metadata.json"
+              fi
+
+              # 3. Append to Manifest with Release URLs
               RELEASE_BASE="https://github.com/${{ github.repository }}/releases/latest/download"
               MANIFEST="${MANIFEST}{\"id\":\"${PACK_ID}\",\"mrpack\":\"${RELEASE_BASE}/${PACK_ID}.mrpack\",\"curseforge\":\"${RELEASE_BASE}/${PACK_ID}-curseforge.zip\",\"modlist\":\"packs/${PACK_ID}/modlist.txt\"},"
             fi

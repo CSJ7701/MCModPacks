@@ -75,17 +75,17 @@ jobs:
               echo "# Mod List for $PACK_ID" > "$MODLIST_FILE"
               if [ -d "$pack_dir/mods" ]; then
                 python3 -c '
-import glob, re
-mods = []
-for file in glob.glob("'$pack_dir'/mods/*.toml"):
-    with open(file, "r", encoding="utf-8") as f:
-        content = f.read()
-        name_match = re.search(r"^name\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
-        if name_match:
-            mods.append(name_match.group(1))
-mods.sort(key=lambda x: x.lower())
-for line in mods: print(line)
-' >> "$MODLIST_FILE"
+                import glob, re
+                mods = []
+                for file in glob.glob("'$pack_dir'/mods/*.toml"):
+                  with open(file, "r", encoding="utf-8") as f:
+                    content = f.read()
+                    name_match = re.search(r"^name\s*=\s*\"([^\"]+)\"", content, re.MULTILINE)
+                    if name_match:
+                      mods.append(name_match.group(1))
+                mods.sort(key=lambda x: x.lower())
+                for line in mods: print(line)
+                ' >> "$MODLIST_FILE"
               fi
 
               # 2. Append to Manifest with Release URLs

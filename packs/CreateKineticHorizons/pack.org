@@ -1163,6 +1163,7 @@ CLOSED: [2026-09-10 Thu 13:52]
 *** ACTIVE The Immersive Music Mod
 :PROPERTIES:
 :Source:   modrinth
+:Version_URL: https://modrinth.com/mod/immersivemusicmod/version/1.0.6
 :END:
 
 *** DISABLED FTB Quests
@@ -1173,6 +1174,7 @@ CLOSED: [2026-09-10 Thu 13:52]
 *** DISABLED FTB Quests Optimizer
 :PROPERTIES:
 :Source:   modrinth
+:Side:     both
 :END:
 
 * System & Utility

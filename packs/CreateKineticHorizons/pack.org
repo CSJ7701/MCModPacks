@@ -196,6 +196,10 @@
 :PROPERTIES:
 :Source:   modrinth
 :END:
+*** ACTIVE Linear Bearings Fix
+:PROPERTIES:
+:Source:   modrinth
+:END:
 
 *** ACTIVE AeroEngine
 :PROPERTIES:
@@ -223,10 +227,13 @@
 :Version_URL: https://www.curseforge.com/minecraft/mc-mods/create-coasters-extras
 :END:
 
-*** ACTIVE Create: Coaster Seats
+*** DISABLED Create: Coaster Seats
+CLOSED: [2026-09-10 Thu 13:58]
 :PROPERTIES:
 :Source: modrinth
 :END:
+
+Mod not set up for servers correctly. Reenable if updates fix issues.
 
 *** ACTIVE Create: Additional Logistics
 :PROPERTIES:
@@ -309,7 +316,7 @@
 :END:
 
 ** Create Addons - Integrations
-*** ACTIVE Create: Slice and Dice
+*** ACTIVE Create: Slice & Dice
 :PROPERTIES:
 :Source:   modrinth
 :END:
@@ -344,7 +351,8 @@
 :Source:   modrinth
 :END:
 
-*** ACTIVE Aeronautics: Winds & Weather
+*** DISABLED Aeronautics: Winds & Weather --- REENABLE ONCE UPDATES FIX SERVER ISSUES
+CLOSED: [2026-09-10 Thu 13:58]
 :PROPERTIES:
 :Source:   modrinth
 :END:
@@ -883,7 +891,8 @@ CLOSED: [2026-09-05 Sat 19:31]
 :Source:   modrinth
 :END:
 
-*** ACTIVE Nearby Delight
+*** DISABLED Nearby Delight
+CLOSED: [2026-09-10 Thu 13:52]
 :PROPERTIES:
 :Source:   modrinth
 :END:

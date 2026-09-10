@@ -365,11 +365,6 @@ hash = "7a7eeb96f8cf82768269855ff837c07fa75daf32a6f560d85f2bf901402d70d3"
 metafile = true
 
 [[files]]
-file = "mods/create-coaster-seats.pw.toml"
-hash = "316da18da93644f6630d8451b8c37e37bdc36fbb6cd4e90c1a4ec44a170e945d"
-metafile = true
-
-[[files]]
 file = "mods/create-coasters-extras.pw.toml"
 hash = "8ba58a0135d5b0e23c00644305da48d7d181259c00c0c749464152fd540f39f5"
 metafile = true
@@ -527,11 +522,6 @@ metafile = true
 [[files]]
 file = "mods/create-shuffle-filter.pw.toml"
 hash = "2d2083fc8d2149da8c43947c9577f69dcd0d05abbddf7347e33e7bca3ca94e64"
-metafile = true
-
-[[files]]
-file = "mods/create-slice-and-dice-growth-accelerator.pw.toml"
-hash = "058d6a0b690d7ada105c4267aeb01e1d31471598eb76ca66c98c25eedb3d9879"
 metafile = true
 
 [[files]]
@@ -897,6 +887,11 @@ metafile = true
 [[files]]
 file = "mods/linear-bearing.pw.toml"
 hash = "e92248ff7e47d94175ee315550946858967e9f1076653468a1d10a6aa53a4d82"
+metafile = true
+
+[[files]]
+file = "mods/linear-bearings-fix.pw.toml"
+hash = "210e07b6cd9ef4bbd7bb6327f5c1903f2075a684240cc4f7a629d4afe73fa4e6"
 metafile = true
 
 [[files]]

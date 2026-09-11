@@ -1160,7 +1160,8 @@ CLOSED: [2026-09-10 Thu 13:52]
 :Source:   modrinth
 :END:
 
-*** ACTIVE The Immersive Music Mod
+*** DISABLED The Immersive Music Mod
+CLOSED: [2026-09-10 Thu 20:35]
 :PROPERTIES:
 :Source:   modrinth
 :Version_URL: https://modrinth.com/mod/immersivemusicmod/version/1.0.6

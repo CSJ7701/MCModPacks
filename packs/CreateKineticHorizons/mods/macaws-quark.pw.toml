@@ -1,0 +1,13 @@
+name = "Macaw's Quark"
+filename = "mcwquark-neoforge-1.21.1-1.6.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/uLtxXFVm/versions/30Ayywkn/mcwquark-neoforge-1.21.1-1.6.1.jar"
+hash-format = "sha512"
+hash = "10408234d10dec01c5c9457106fa3e719ce3083db67216f22f42040aa4be0f8cf6d82f7aa9847d0f64c2dd207ff03cac0819dae2463add91e4f3d71d79031709"
+
+[update]
+[update.modrinth]
+mod-id = "uLtxXFVm"
+version = "30Ayywkn"

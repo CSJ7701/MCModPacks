@@ -192,6 +192,22 @@
 :PROPERTIES:
 :Source:   modrinth
 :END:
+*** TESTING Create Aeronautics: Survival Physics Staff
+:PROPERTIES:
+:Source:   modrinth
+:END:
+*** TESTING Create Aeronautics Paddlewheels
+:PROPERTIES:
+:Source:   modrinth
+:END:
+*** TESTING Create Aeronautics Lift Patch
+:PROPERTIES:
+:Source:   modrinth
+:END:
+*** TESTING Hot's Aerostuff
+:PROPERTIES:
+:Source:   modrinth
+:END:
 *** ACTIVE Create: Linear Bearing
 :PROPERTIES:
 :Source:   modrinth
@@ -961,6 +977,82 @@ CLOSED: [2026-09-10 Thu 13:52]
 :PROPERTIES:
 :Source:   modrinth
 :END:
+
+*** TESTING Macaw's Windows
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** TESTING Macaw's Fences and Walls
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** TESTING Macaw's Bridges
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** TESTING Macaw's Doors
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** TESTING Macaw's Roofs
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** TESTING Macaw's Stairs
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** TESTING Macaw's Furniture
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** TESTING Macaw's Paths and Pavings
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** TESTING Macaw's Trapdoors
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** TESTING Macaw's Holidays
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** TESTING Macaw's Lights and Lamps
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** TESTING Macaw's Betters
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** TESTING Macaw's Quark
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** TESTING Dusty Decorations
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** TESTING Mythrais
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
 * Quality of Life & Interface
 ** Storage & Logistics
 *** ACTIVE Sophisticated Backpacks
@@ -1120,6 +1212,11 @@ CLOSED: [2026-09-10 Thu 13:52]
 :END:
 
 *** ACTIVE Searchables
+:PROPERTIES:
+:Source:   modrinth
+:END:
+
+*** TESTING Effortless Building: Sophisticated
 :PROPERTIES:
 :Source:   modrinth
 :END:
@@ -1340,7 +1437,6 @@ Eating a shrink morsel will decrease the same properties.
 
 - Will want to add "xxx" to jave arguments. This is a more effective garbage collector.
 
-- DOWNED: health doesn't decrease properly when wait to revive until after timer is up. Need to implement some sort of check - probably a flag on clone event that prevents the downed event from firing if the player hasn't pressed "respawn" yet. We'd also need a flag on timer completion.
-  - So dying resets the "respawned" flag and starts the timer. If the timer finishes and the respawn flag isn't true, we set the "downed pending" flag to true and return without taking action. Then, on respawn/clone event, if "downed pending" is true, we execute our actions. If the "downed pending" flag is false and we press respawn, we go into spectator like normal.
+- Need more building blocks. Roofs, etc
  
 

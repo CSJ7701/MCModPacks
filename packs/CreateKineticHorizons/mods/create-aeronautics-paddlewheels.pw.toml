@@ -1,0 +1,13 @@
+name = "Create Aeronautics Paddlewheels"
+filename = "paddlewheels-1.0.0.7.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/UYUbgJ0G/versions/Cpx8o5av/paddlewheels-1.0.0.7.jar"
+hash-format = "sha512"
+hash = "4c5478c3ad7af31c93eb7e52443c1756912eca7dbaa0b29a82d675ac45947218d407bd97618068ee73091e5b281c2edf9f5808d10b01daec230c0cd2393969e8"
+
+[update]
+[update.modrinth]
+mod-id = "UYUbgJ0G"
+version = "Cpx8o5av"

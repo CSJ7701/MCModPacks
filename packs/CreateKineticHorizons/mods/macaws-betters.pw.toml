@@ -1,0 +1,13 @@
+name = "Macaw's Betters"
+filename = "mcwbetters-neoforge-1.21.1-1.6.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/YwnqoRu0/versions/GA8UzsyL/mcwbetters-neoforge-1.21.1-1.6.jar"
+hash-format = "sha512"
+hash = "5f441247c2b38faa8849369a544ae35c09460152a0b6db0ca27689eec89171d9a6832e098d4e2628968f25d62a1558c1d73a97af0e569c7e1d6e388cfbf68d73"
+
+[update]
+[update.modrinth]
+mod-id = "YwnqoRu0"
+version = "GA8UzsyL"

@@ -1,0 +1,13 @@
+name = "Mythrais"
+filename = "mythrais-5.2.1-1.21.1-neo-beta5.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/dz8ogIVL/versions/KaAPwUu4/mythrais-5.2.1-1.21.1-neo-beta5.jar"
+hash-format = "sha512"
+hash = "45266da33f8b94ec58a676a967afb65fe17a73223050675b95ea23b881d7d3d38ba5ccbbaa742e6b0054d0b4e51872e3fe9bae2258c2016eb35ccd845063526a"
+
+[update]
+[update.modrinth]
+mod-id = "dz8ogIVL"
+version = "KaAPwUu4"

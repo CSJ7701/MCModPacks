@@ -1,0 +1,13 @@
+name = "Effortless Building: Sophisticated"
+filename = "sophisticatedbuilding-v4.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Nw3rEYBH/versions/Fo3kVf5b/sophisticatedbuilding-v4.0.0.jar"
+hash-format = "sha512"
+hash = "f7f4facaafc4c3394ed010ca77d7f2ed7c36fb2130582a3cf137fca7fcea8159d2b89fef66f17e7afff0886a2743ab53a5f2746733ff23ee7cc0118dedadd991"
+
+[update]
+[update.modrinth]
+mod-id = "Nw3rEYBH"
+version = "Fo3kVf5b"

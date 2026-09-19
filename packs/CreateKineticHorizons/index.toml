@@ -41,6 +41,11 @@ file = "kubejs/startup_scripts/mushroom_resize/00_items.js"
 hash = "57ce8ecd401c94d62c17181f92638e8dac055a6a975ca1f29e0e0183050b6ac2"
 
 [[files]]
+file = "mods/addonslib.pw.toml"
+hash = "487344fb90cd5c294e8b6e8922ce7cfd436d78b1b8880b5029046aa419d5d277"
+metafile = true
+
+[[files]]
 file = "mods/aeroengine-fuel-compat.pw.toml"
 hash = "df52e0b6a8ff45b37f66aae58fd3e4d3043d8937a2898c562ea5ed9991730206"
 metafile = true
@@ -285,6 +290,16 @@ hash = "1a6533f2dfb54f7e4ce86c528fd43b84620b5a7044e10f94eabbdf65d85b887c"
 metafile = true
 
 [[files]]
+file = "mods/create-aeronautics-lift-patch.pw.toml"
+hash = "434d92388783bd89bfad57891f43b7bab9b9c3b16800fd1d8de5f76049a2f304"
+metafile = true
+
+[[files]]
+file = "mods/create-aeronautics-paddlewheels.pw.toml"
+hash = "a8b459bfb86f6ec9ff8502f58a8ad82a028e95f5521d7d67b2d78581850d1af6"
+metafile = true
+
+[[files]]
 file = "mods/create-aeronautics-portable-engine-liquid-fuel.pw.toml"
 hash = "aa69dc9a1d57d4c3c4f83627017b5a741c301f42f83f25a47bc420e869f9d931"
 metafile = true
@@ -292,6 +307,11 @@ metafile = true
 [[files]]
 file = "mods/create-aeronautics-rechiseled-compatibility.pw.toml"
 hash = "958323bd19f2d980d9ccac8cdaedf29345db967c3b3c74e2b9f83688cd17964f"
+metafile = true
+
+[[files]]
+file = "mods/create-aeronautics-survival-physics-staff.pw.toml"
+hash = "fd1a6bf689cf7ceefc0aef6ba16fd0875a3df2b768462392136b07ef92d1ef3b"
 metafile = true
 
 [[files]]
@@ -595,6 +615,11 @@ hash = "633da82d88437f80abcc0aed54eda0a6a7d89e1f3289d3fdc85a529d1ec0b0ee"
 metafile = true
 
 [[files]]
+file = "mods/dusty-decorations.pw.toml"
+hash = "5c3c3dce1d331a31e67bbc826b0cdaf6db79723cd4739728ff274f4f0b712fe2"
+metafile = true
+
+[[files]]
 file = "mods/dynamic-village.pw.toml"
 hash = "2bcb5fbe083f3ace39698e890255eb0758116e395fb211d136c8a12369b529e0"
 metafile = true
@@ -602,6 +627,11 @@ metafile = true
 [[files]]
 file = "mods/edf-remastered.pw.toml"
 hash = "aa893b812f2075ff2bf084ddb869f9355313b9d763fb679aca86ceff835d5d58"
+metafile = true
+
+[[files]]
+file = "mods/effortless-building-sophisticated.pw.toml"
+hash = "c94ace0c03a79bb58ae6d7786d9e1b09362b173937e94fc8b79025fcba6230ce"
 metafile = true
 
 [[files]]
@@ -697,6 +727,11 @@ metafile = true
 [[files]]
 file = "mods/handcrafted.pw.toml"
 hash = "0004feab868f7b873c12db05aae0d0dac6c87b497490b48bb66480e7c8d0f340"
+metafile = true
+
+[[files]]
+file = "mods/hots-aerostuff.pw.toml"
+hash = "a7e9187482cf225fbdb3769e860989040d41508106c4672c49439ed4f0d94af1"
 metafile = true
 
 [[files]]
@@ -920,6 +955,66 @@ hash = "2fe01d8046db2246c6df01eedd1fbc7837c08cc6d3b2a9017107ade989e86a28"
 metafile = true
 
 [[files]]
+file = "mods/macaws-betters.pw.toml"
+hash = "424e0256ac5b68c82f6bee1a3aebdd19acd590a067d4bc519a54470d3177be0f"
+metafile = true
+
+[[files]]
+file = "mods/macaws-bridges.pw.toml"
+hash = "0c961c709297bcc89f2f07e1eb1049e4d21a331adb020f1786e5a9a0883e037c"
+metafile = true
+
+[[files]]
+file = "mods/macaws-doors.pw.toml"
+hash = "b00f8b696187f092a939b7bbbf2ad2f249665776465bac594e2d0f4f37d36dc4"
+metafile = true
+
+[[files]]
+file = "mods/macaws-fences-and-walls.pw.toml"
+hash = "ea28bcac23c070998d1f7df5dcbf248831c33f59067eaf2fd125adfa07c5722c"
+metafile = true
+
+[[files]]
+file = "mods/macaws-furniture.pw.toml"
+hash = "52019f01292cb860fa135485f941fff42f97910267bf122f2f797e31109bb93f"
+metafile = true
+
+[[files]]
+file = "mods/macaws-lights-and-lamps.pw.toml"
+hash = "87366a5d82152829103539d930ad9c0e8edbd5a917f65657db76f718f5296927"
+metafile = true
+
+[[files]]
+file = "mods/macaws-paths-and-pavings.pw.toml"
+hash = "e04b1ac906167721ae2696ec837be362e6d6da252e8bc5c0bac29974fbae0461"
+metafile = true
+
+[[files]]
+file = "mods/macaws-quark.pw.toml"
+hash = "0103a687d9616bf6b512b5a7d0c02770febe34101797a6ae300dd3380dbfbafe"
+metafile = true
+
+[[files]]
+file = "mods/macaws-roofs.pw.toml"
+hash = "b5f1c37740051774214d8dd035df9bac68ddd4d8c71ed8949fdaabd5949829de"
+metafile = true
+
+[[files]]
+file = "mods/macaws-stairs.pw.toml"
+hash = "abae13cbccdb8789a929cc4d2f9fc38f93ef6bb9082a87f931fcef1b1695cbe6"
+metafile = true
+
+[[files]]
+file = "mods/macaws-trapdoors.pw.toml"
+hash = "4a1f84dbcd179fa481a4d0e5f45da24415158d373117348d4438eaceff4f5fcc"
+metafile = true
+
+[[files]]
+file = "mods/macaws-windows.pw.toml"
+hash = "450ed5663bf1d12ffddc78eda5aa56cb7808cbdac6db8102d18461361aaa555f"
+metafile = true
+
+[[files]]
 file = "mods/mapfrontiers.pw.toml"
 hash = "3238202efb67b9ae73f33166306da11ba8b9ce7bd48e7a5adb1b081bf2591061"
 metafile = true
@@ -1012,6 +1107,11 @@ metafile = true
 [[files]]
 file = "mods/mvsi-moogs-voyager-structures-integrated.pw.toml"
 hash = "cf73d8d583486f2520c5bc4f6077fd852846a3091afa27fd38d580491897510d"
+metafile = true
+
+[[files]]
+file = "mods/mythrais.pw.toml"
+hash = "aeac5ea475e6c06e6ff2e84307a04957fee5cf8ba4bfec18f9c179b3f498d176"
 metafile = true
 
 [[files]]

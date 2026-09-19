@@ -1216,11 +1216,6 @@ CLOSED: [2026-09-10 Thu 13:52]
 :Source:   modrinth
 :END:
 
-*** TESTING Effortless Building: Sophisticated
-:PROPERTIES:
-:Source:   modrinth
-:END:
-
 ** Atmosphere & Immersion
 *** ACTIVE AmbientSounds
 :PROPERTIES:
@@ -1435,8 +1430,10 @@ Eating a shrink morsel will decrease the same properties.
 
 - When running shaders, disable clouds to see weather2 clouds
 
-- Will want to add "xxx" to jave arguments. This is a more effective garbage collector.
+- Will want to add "-XX:+UseZGC" to jave arguments. This is a more effective garbage collector.
 
 - Need more building blocks. Roofs, etc
  
 
+* Update
+- Artifacts - 13.2.3

@@ -1,13 +1,13 @@
 name = "JadeColonies"
-filename = "jadecolonies-1.21.1-1.6.0.jar"
+filename = "jadecolonies-1.21.1-1.6.1.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "27d514c0a22333b139f786ea69e50d1c04caa29a"
+hash = "699bb29540ebdd8f139d012d45570db197fd2680"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 5721338
+file-id = 8879119
 project-id = 882310

@@ -145,6 +145,11 @@ hash = "561ad31048950924972bdf9f0c156ca9bc11ebbb5928c76e00e58f5b1afb12c3"
 metafile = true
 
 [[files]]
+file = "mods/bens-sharks.pw.toml"
+hash = "2380138869c88a71a98d712922f98d182780cfb48a8947b6dad4349928aa8991"
+metafile = true
+
+[[files]]
 file = "mods/better-advanced-tooltips.pw.toml"
 hash = "03084ff4f74cedc1b8ac6c85a98842f75956fb4fa811d285d8ca7caa8d54da5d"
 metafile = true
@@ -735,6 +740,11 @@ hash = "d32337d650f5b3aee6a54f5cd8cc43c7d05f5f9f353c61dda76f85427bb80409"
 metafile = true
 
 [[files]]
+file = "mods/icys-better-horses.pw.toml"
+hash = "2e81f9a9cde62936a045974690dd54e8c1f2166751eaed37c00b4b5c0613c4c6"
+metafile = true
+
+[[files]]
 file = "mods/illager-invasion.pw.toml"
 hash = "bf9baef8bb1145e580ae8ee57b285e22838e943c56a96ffb424fd02bf99c468e"
 metafile = true
@@ -1052,6 +1062,11 @@ metafile = true
 [[files]]
 file = "mods/modernfix.pw.toml"
 hash = "c84140c66f233909b392bd7253ca33c59903ffda51beff558d9a2a4a8c6bc269"
+metafile = true
+
+[[files]]
+file = "mods/modonomicon.pw.toml"
+hash = "f35e905918b2694a543ca4bef5e90be9a84f966b80a5f486dbbab6cc015f07e8"
 metafile = true
 
 [[files]]
